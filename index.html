@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quickbee — Redefining Gold Savings</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav-logo">
+  <img src="logo.png" alt="Quickbee" class="nav-logo-img">
+</a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <!--<li><a href="team.html">Team</a></li>-->
+    <li><a href="#contact" class="nav-cta">Partner With Us</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-hex"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge reveal">Fintech · Digital Gold · Wealth
+</div>
+    <h1 class="hero-title reveal">
+      Redefining Gold Savings<br/>
+      <em>for the Digital Age.</em>
+    </h1>
+    <p class="hero-sub reveal">
+      Quickbee Technology Ventures enables customers to accumulate digital gold and convert their savings into real-world value through trusted jeweller partnerships.
+    </p>
+    <div class="hero-ctas reveal">
+      <a href="#contact" class="btn-gold">Partner with us</a>
+      <a href="about.html" class="btn-outline">Learn more</a>
+    </div>
+    <div class="hero-trust reveal">
+      <div class="trust-badge"><span class="dot">✓</span> RBI Compliant</div>
+      <div class="trust-badge"><span class="dot">✓</span> 99.99% Pure Gold</div>
+      <div class="trust-badge"><span class="dot">✓</span> Insured Holdings</div>
+    </div>
+   <!-- <div class="hero-stats reveal">
+      <div class="stat">
+        <span class="stat-num">10,000+</span>
+        <span class="stat-label">Active Savers</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-num">₹1/day</span>
+        <span class="stat-label">Min. Savings</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-num">500+</span>
+        <span class="stat-label">Jeweller Partners</span>
+      </div>
+    </div>-->
+  </div>
+
+  <div class="hero-visual reveal">
+    <span class="coin coin-1">🪙</span>
+    <span class="coin coin-2">💰</span>
+    <span class="coin coin-3">🪙</span>
+    <span class="coin coin-4">💰</span>
+    <div class="gold-card">
+      <div class="gc-header">
+        <span class="gc-logo">🐝 Quickbee</span>
+        <span class="gc-tag">Live Portfolio</span>
+      </div>
+      <div class="gc-amount">
+        <span class="gc-label">Your Gold Holdings</span>
+        <button class="gc-view-btn" onclick="document.getElementById('loginModal').classList.add('active')">
+          <div class="gc-view-icon">🔒</div>
+          <div class="gc-view-text">
+            <span>Tap to reveal balance</span>
+            <span>View My Holdings →</span>
+          </div>
+          <span class="gc-view-arrow">›</span>
+        </button>
+      </div>
+      <div class="gc-bar"><div class="gc-progress"></div></div>
+      <div class="gc-footer">
+        <span>🎯 Goal: 30g</span>
+        <span>82% achieved</span>
+      </div>
+      <div class="gc-mini-stats">
+        <div class="gc-mini-stat">
+          <span class="gc-mini-label">Today's Rate</span>
+          <span class="gc-mini-value">₹6,820/g</span>
+        </div>
+        <div class="gc-mini-stat">
+          <span class="gc-mini-label">Monthly Return</span>
+          <span class="gc-mini-value">+2.4% 📈</span>
+        </div>
+      </div>
+      <div class="gc-sparkline">
+        <svg viewBox="0 0 200 55" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="sparkGrad" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0%" stop-color="rgba(139,26,60,0.3)"/>
+              <stop offset="100%" stop-color="rgba(139,26,60,0)"/>
+            </linearGradient>
+          </defs>
+          <polyline points="0,50 25,42 50,45 75,32 100,28 125,22 150,16 175,10 200,6" fill="none" stroke="rgba(139,26,60,0.6)" stroke-width="2" stroke-linejoin="round"/>
+          <polyline points="0,55 0,50 25,42 50,45 75,32 100,28 125,22 150,16 175,10 200,6 200,55" fill="url(#sparkGrad)"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOGIN MODAL -->
+  <div class="login-modal-overlay" id="loginModal" onclick="if(event.target===this) this.classList.remove('active')">
+    <div class="login-modal">
+      <button class="login-modal-close" onclick="document.getElementById('loginModal').classList.remove('active')">✕</button>
+      <div class="login-modal-icon">🐝</div>
+      <h3>Welcome Back!</h3>
+      <p>Please log in to your Quickbee account to view your gold holdings and savings progress.</p>
+      <button class="login-modal-btn">Login to Continue</button>
+      <p class="login-modal-sub">New here? <a href="#">Create a free account →</a></p>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- TICKER STRIP -->
+<div class="ticker-strip">
+  <div class="ticker-inner">
+    <div class="ticker-item"><span class="ticker-dot"></span> 24K Digital Gold <span class="ticker-gold">₹6,820/g</span></div>
+    <div class="ticker-item"><span class="ticker-dot"></span> Start Saving from <span class="ticker-gold">₹1/day</span></div>
+    <div class="ticker-item"><span class="ticker-dot"></span> 99.99% Pure Gold <span class="ticker-gold">Guaranteed</span></div>
+    <div class="ticker-item"><span class="ticker-dot"></span> Redeem as <span class="ticker-gold">Real Jewellery</span></div>
+    <div class="ticker-item"><span class="ticker-dot"></span> 500+ Jeweller Partners <span class="ticker-gold">Across India</span></div>
+    <div class="ticker-item"><span class="ticker-dot"></span> Monthly Returns <span class="ticker-gold">+2.4%</span></div>
+    <div class="ticker-item"><span class="ticker-dot"></span> 24K Digital Gold <span class="ticker-gold">₹6,820/g</span></div>
+    <div class="ticker-item"><span class="ticker-dot"></span> Start Saving from <span class="ticker-gold">₹1/day</span></div>
+    <div class="ticker-item"><span class="ticker-dot"></span> 99.99% Pure Gold <span class="ticker-gold">Guaranteed</span></div>
+    <div class="ticker-item"><span class="ticker-dot"></span> Redeem as <span class="ticker-gold">Real Jewellery</span></div>
+    <div class="ticker-item"><span class="ticker-dot"></span> 500+ Jeweller Partners <span class="ticker-gold">Across India</span></div>
+    <div class="ticker-item"><span class="ticker-dot"></span> Monthly Returns <span class="ticker-gold">+2.4%</span></div>
+  </div>
+</div>
+
+<!-- WHAT WE DO -->
+<section class="what-we-do section-pad">
+  <div class="container">
+    <div class="section-label reveal">What We Do</div>
+    <h2 class="section-title reveal">
+      Where <em>wealth management</em><br/>meets digital gold
+    </h2>
+    <div class="wwd-grid">
+      <div class="wwd-card reveal" style="--delay:0.1s">
+        <div class="wwd-icon">💰</div>
+        <h3>Save in Gold</h3>
+        <p>Flexible and convenient gold savings that fit into any lifestyle — from small daily contributions to larger one-time investments.</p>
+      </div>
+      <div class="wwd-card reveal" style="--delay:0.2s">
+
+        <div class="wwd-icon">📊</div>
+        <h3>Track Holdings</h3>
+        <p>Real-time transparent tracking of your gold in grams and rupees. Know exactly what you own, always.</p>
+      </div>
+      <div class="wwd-card reveal" style="--delay:0.3s">
+
+        <div class="wwd-icon">💎</div>
+        <h3>Convert to Jewellery</h3>
+        <p>Turn digital savings into physical jewellery through our trusted partner network. Digital to tangible, seamlessly.</p>
+      </div>
+    </div>
+    <div class="wwd-statement reveal">
+      <p>We are transforming gold from a passive asset into an <strong>active financial habit.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- NUMBERS -->
+<!--<section class="numbers-section">
+  <div class="container">
+    <div class="numbers-grid">
+      <div class="number-item reveal">
+        <div class="number-value">10K+</div>
+        <div class="number-label">Active Savers</div>
+      </div>
+      <div class="number-item reveal" style="--delay:0.1s">
+        <div class="number-value">₹50Cr+</div>
+        <div class="number-label">Gold Saved</div>
+      </div>
+      <div class="number-item reveal" style="--delay:0.2s">
+        <div class="number-value">500+</div>
+        <div class="number-label">Jeweller Partners</div>
+      </div>
+      <div class="number-item reveal" style="--delay:0.3s">
+        <div class="number-value">99.99%</div>
+        <div class="number-label">Gold Purity</div>
+      </div>
+    </div>
+  </div>
+</section>-->
+
+
+<!-- ECOSYSTEM -->
+<section class="ecosystem">
+  <div class="container">
+    <div class="section-label reveal" >Our Ecosystem</div>
+    <h2 class="section-title reveal" style="color: #fff">
+      A complete <em>gold economy</em><br/>in one platform
+    </h2>
+    <div class="eco-grid">
+      <div class="eco-card reveal" style="--delay:0.05s">
+        <div class="eco-num">01</div>
+        <div class="eco-icon">👤</div>
+        <h3>Customers</h3>
+        <p>Simple, disciplined gold savings with full transparency and control</p>
+      </div>
+      <div class="eco-card reveal" style="--delay:0.15s">
+        <div class="eco-num">02</div>
+        <div class="eco-icon">💍</div>
+        <h3>Jewellers</h3>
+        <p>Access to high-intent buyers who are already saving toward a purchase</p>
+      </div>
+      <div class="eco-card reveal" style="--delay:0.25s">
+        <div class="eco-num">03</div>
+        <div class="eco-icon">🤝</div>
+        <h3>Distribution Partners</h3>
+        <p>Scalable customer acquisition through agents and partner platforms</p>
+      </div>
+      <div class="eco-card reveal" style="--delay:0.35s">
+        <div class="eco-num">04</div>
+        <div class="eco-icon">🏦</div>
+        <h3>Lending Partners</h3>
+        <p>Financial facilitation for high-value jewellery purchases when needed</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-it-works section-pad">
+  <div class="container">
+    <div class="section-label reveal">The Process</div>
+    <h2 class="section-title reveal">How It Works</h2>
+    <div class="steps">
+      <div class="step reveal" style="--delay:0.0s">
+        <div class="step-num">01</div>
+        <div class="step-body">
+          <h3>Start Saving</h3>
+          <p>Customers begin accumulating digital gold with any amount they choose — daily, weekly, or monthly.</p>
+        </div>
+      </div>
+      <div class="step-connector reveal"></div>
+      <div class="step reveal" style="--delay:0.15s">
+        <div class="step-num">02</div>
+        <div class="step-body">
+          <h3>Build Over Time</h3>
+          <p>Savings grow through consistent contributions. Watch your gold accumulate in real-time.</p>
+        </div>
+      </div>
+      <div class="step-connector reveal"></div>
+      <div class="step reveal" style="--delay:0.3s">
+        <div class="step-num">03</div>
+        <div class="step-body">
+          <h3>Redeem Anytime</h3>
+          <p>Convert your digital gold into exquisite jewellery through our trusted partner jewellers.</p>
+        </div>
+      </div>
+      <div class="step-connector reveal"></div>
+      <div class="step reveal" style="--delay:0.45s">
+        <div class="step-num">04</div>
+        <div class="step-body">
+          <h3>Enhance Your Purchase</h3>
+          <p>Optional financial facilitation for higher-value purchases — access more without delay.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY QUICKBEE -->
+<section class="why-section section-pad">
+  <div class="container why-container">
+    <div class="why-left reveal">
+      <div class="section-label">Why Quickbee</div>
+      <h2 class="section-title">Built different.<br/><em>By design.</em></h2>
+      <a href="about.html" class="btn-gold" style="margin-top:2rem; display:inline-block">Our Story</a>
+    </div>
+    <div class="why-right">
+      <div class="why-item reveal" style="--delay:0.05s">
+        <div class="why-check">✓</div>
+        <p>Built by experienced banking and technology professionals</p>
+      </div>
+      <div class="why-item reveal" style="--delay:0.1s">
+        <div class="why-check">✓</div>
+        <p>Focused on end-to-end customer journey from savings to redemption</p>
+      </div>
+      <div class="why-item reveal" style="--delay:0.15s">
+        <div class="why-check">✓</div>
+        <p>Strong jeweller network integration for seamless conversions</p>
+      </div>
+      <div class="why-item reveal" style="--delay:0.2s">
+        <div class="why-check">✓</div>
+        <p>Scalable distribution-led model for rapid growth</p>
+      </div>
+      <div class="why-item reveal" style="--delay:0.25s">
+        <div class="why-check">✓</div>
+        <p>Positioned in a high-growth fintech segment with proven demand</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<!-- TESTIMONIALS -->
+<!--<section class="testimonials section-pad">
+  <div class="container">
+    <div class="section-label">What People Say</div>
+    <h2 class="section-title">Trusted by savers<br/>across India</h2>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"I started saving ₹50 a day and in 8 months I redeemed a beautiful gold chain for my daughter's birthday. Quickbee made it so simple!"</p>
+        <div class="testi-author">
+          <div class="testi-avatar">PS</div>
+          <div>
+            <div class="testi-name">Priya Sharma</div>
+            <div class="testi-loc">Chennai, Tamil Nadu</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal" style="--delay:0.1s">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"The jeweller redemption network is fantastic. I walked into a partner store and exchanged my digital gold for a ring on the spot. No hassle at all."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">RK</div>
+          <div>
+            <div class="testi-name">Rajan Kumar</div>
+            <div class="testi-loc">Kochi, Kerala</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal" style="--delay:0.2s">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"As a jeweller partner, Quickbee has brought us a whole new generation of customers. The platform is reliable and the team is very supportive."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">MJ</div>
+          <div>
+            <div class="testi-name">Meera Jewellers</div>
+            <div class="testi-loc">Thrissur, Kerala</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>-->
+
+
+<section class="cta-banner" id="contact">
+  <div class="cta-bg">
+    <div class="gold-orb orb1"></div>
+    <div class="gold-orb orb2"></div>
+  </div>
+  <div class="container cta-content">
+    <h2 class="reveal">Join us in building the<br/><em>future of gold savings.</em></h2>
+    <p class="reveal">Whether you're a jeweller, distributor, or financial institution — there's a place for you in the Quickbee ecosystem.</p>
+    <div class="cta-actions reveal">
+<a
+  class="btn-gold"
+  target="_self"
+  href="mailto:hello@quickbee.in?subject=Partnership%20Enquiry%20-%20Quickbee&body=Hi%20Quickbee%20Team%2C%0A%0AI%20am%20interested%20in%20partnering%20with%20Quickbee.%0A%0AName%3A%20%0AOrganisation%3A%20%0APhone%3A%20%0AType%20of%20Partnership%3A%20%0A%0AThank%20you."
+>
+  Partner With Us →
+</a>      <a href="services.html" class="btn-outline-light">Explore Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+       <a href="index.html" class="nav-logo">
+  <img src="logo.png" alt="Quickbee" class="nav-logo-img">
+</a>
+      <p>Quickbee Technology Ventures Pvt Ltd</p>
+      <p style="margin-top:0.5rem; font-size:0.8rem; opacity:0.5">Redefining Gold Savings for the Digital Age</p>
+      <div class="footer-social">
+        <a href="" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="" target="_blank" rel="noopener" aria-label="X (Twitter)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+       
+      </div>
+    </div>
+    <div class="footer-links">
+      <h4>Navigate</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="terms.html">Terms &amp; Conditions</a>
+      <!-- <a href="team.html">Team</a> -->
+    </div>
+    <div class="footer-links">
+      <h4>Services</h4>
+      <a href="services.html">Digital Gold</a>
+      <a href="services.html">Jewellery Redemption</a>
+      <a href="services.html">White Label</a>
+      <a href="services.html">API Integrations</a>
+    </div>
+    <div class="footer-contact">
+      <h4>Get In Touch</h4>
+	        <p style="margin-top:1rem; font-size:0.85rem; opacity:0.6">KC Arcade, Near TV centre, CSEZ
+Ernakulam, Kerala, 682037
+India
+</p>
+<p style="margin-top:1rem; font-size:0.85rem; opacity:0.6">Phone:+918086801662, <br>
+        +919323270902
+
+</p>
+      <a href="mailto:hello@quickbee.in">hello@quickbee.in</a>
+      <p style="margin-top:1rem; font-size:0.85rem; opacity:0.6">©2026 Quickbee Technology Ventures Pvt Ltd. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
