@@ -28,7 +28,7 @@ function openMobileMenu() {
     { href: 'index.html', label: 'Home' },
     { href: 'about.html', label: 'About' },
     { href: 'services.html', label: 'Services' },
-    { href: 'team.html', label: 'Team' },
+   
   ];
   const linksHTML = links.map(l => {
     const active = l.href === currentPage ? ' style="color:var(--gold-pale)"' : '';

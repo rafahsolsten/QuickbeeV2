@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Quickbee — Redefining Gold Savings</title>
+  <title>QuickBee — Redefining Gold Savings</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +14,7 @@
 <!-- NAV -->
 <nav class="nav" id="nav">
   <a href="index.html" class="nav-logo">
-  <img src="logo.png" alt="Quickbee" class="nav-logo-img">
+  <img src="logo.png" alt="QuickBee" class="nav-logo-img">
 </a>
   <ul class="nav-links">
     <li><a href="index.html" class="active">Home</a></li>
@@ -41,7 +41,7 @@
       <em>for the Digital Age.</em>
     </h1>
     <p class="hero-sub reveal">
-      Quickbee Technology Ventures enables customers to accumulate digital gold and convert their savings into real-world value through trusted jeweller partnerships.
+      QuickBee Technology Ventures enables customers to accumulate digital gold and convert their savings into real-world value through trusted jeweller partnerships.
     </p>
     <div class="hero-ctas reveal">
       <a href="#contact" class="btn-gold">Partner with us</a>
@@ -77,7 +77,7 @@
     <span class="coin coin-4">💰</span>
     <div class="gold-card">
       <div class="gc-header">
-        <span class="gc-logo">🐝 Quickbee</span>
+        <span class="gc-logo">🐝 QuickBee</span>
         <span class="gc-tag">Live Portfolio</span>
       </div>
       <div class="gc-amount">
@@ -123,16 +123,16 @@
 
   <!-- LOGIN MODAL -->
   <div class="login-modal-overlay" id="loginModal" onclick="if(event.target===this) this.classList.remove('active')">
-    <div class="login-modal">
-      <button class="login-modal-close" onclick="document.getElementById('loginModal').classList.remove('active')">✕</button>
-      <div class="login-modal-icon">🐝</div>
-      <h3>Welcome Back!</h3>
-      <p>Please log in to your Quickbee account to view your gold holdings and savings progress.</p>
-      <button class="login-modal-btn">Login to Continue</button>
-      <p class="login-modal-sub">New here? <a href="#">Create a free account →</a></p>
-    </div>
+  <div class="login-modal">
+    <button class="login-modal-close" onclick="document.getElementById('loginModal').classList.remove('active')">✕</button>
+    <div class="login-modal-icon">🐝</div>
+    <h3>Welcome Back!</h3>
+    <p>Please log in to your QuickBee account to view your gold holdings and savings progress.</p>
+    <a href="https://YOUR-LOGIN-URL.com" target="_blank" rel="noopener" class="login-modal-btn" style="display:block; text-align:center; text-decoration:none;">
+      Login to Continue →
+    </a>
   </div>
-
+</div>
   <div class="scroll-hint">
     <span>Scroll</span>
     <div class="scroll-line"></div>
@@ -221,33 +221,65 @@
     <h2 class="section-title reveal" style="color: #fff">
       A complete <em>gold economy</em><br/>in one platform
     </h2>
-    <div class="eco-grid">
-      <div class="eco-card reveal" style="--delay:0.05s">
-        <div class="eco-num">01</div>
-        <div class="eco-icon">👤</div>
-        <h3>Customers</h3>
-        <p>Simple, disciplined gold savings with full transparency and control</p>
-      </div>
-      <div class="eco-card reveal" style="--delay:0.15s">
-        <div class="eco-num">02</div>
-        <div class="eco-icon">💍</div>
-        <h3>Jewellers</h3>
-        <p>Access to high-intent buyers who are already saving toward a purchase</p>
-      </div>
-      <div class="eco-card reveal" style="--delay:0.25s">
-        <div class="eco-num">03</div>
-        <div class="eco-icon">🤝</div>
-        <h3>Distribution Partners</h3>
-        <p>Scalable customer acquisition through agents and partner platforms</p>
-      </div>
-      <div class="eco-card reveal" style="--delay:0.35s">
-        <div class="eco-num">04</div>
-        <div class="eco-icon">🏦</div>
-        <h3>Lending Partners</h3>
-        <p>Financial facilitation for high-value jewellery purchases when needed</p>
-      </div>
+<div class="eco-grid">
+
+  <!-- Customers -->
+  <div class="eco-card reveal" style="--delay:0.05s; padding:0; overflow:hidden;">
+    <img
+src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=260&fit=crop&q=80"
+      alt="Customers"
+      style="width:100%;height:180px;object-fit:cover;display:block;"
+      onerror="this.style.display='none';"
+    />
+    <div style="padding:1.5rem;">
+      <h3>Customers</h3>
+      <p>Simple, disciplined gold savings with full transparency and control</p>
     </div>
   </div>
+
+  <!-- Jewellers -->
+  <div class="eco-card reveal" style="--delay:0.15s; padding:0; overflow:hidden;">
+    <img
+      src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&h=260&fit=crop&q=80"
+      alt="Jewellers"
+      style="width:100%;height:180px;object-fit:cover;display:block;"
+      onerror="this.style.display='none';"
+    />
+    <div style="padding:1.5rem;">
+      <h3>Jewellers</h3>
+      <p>Access to high-intent buyers who are already saving toward a purchase</p>
+    </div>
+  </div>
+
+  <!-- Distribution Partners -->
+  <div class="eco-card reveal" style="--delay:0.25s; padding:0; overflow:hidden;">
+    <img
+      src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&h=260&fit=crop&q=80"
+      alt="Distribution Partners"
+      style="width:100%;height:180px;object-fit:cover;display:block;"
+      onerror="this.style.display='none';"
+    />
+    <div style="padding:1.5rem;">
+      <h3>Distribution Partners</h3>
+      <p>Scalable customer acquisition through agents and partner platforms</p>
+    </div>
+  </div>
+
+  <!-- Lending Partners -->
+  <div class="eco-card reveal" style="--delay:0.35s; padding:0; overflow:hidden;">
+    <img
+      src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=600&h=260&fit=crop&q=80"
+      alt="Lending Partners"
+      style="width:100%;height:180px;object-fit:cover;display:block;"
+      onerror="this.style.display='none';"
+    />
+    <div style="padding:1.5rem;">
+      <h3>Lending Partners</h3>
+      <p>Financial facilitation for high-value jewellery purchases when needed</p>
+    </div>
+  </div>
+
+</div>  </div>
 </section>
 
 <!-- HOW IT WORKS -->
@@ -295,7 +327,7 @@
 <section class="why-section section-pad">
   <div class="container why-container">
     <div class="why-left reveal">
-      <div class="section-label">Why Quickbee</div>
+      <div class="section-label">Why QuickBee</div>
       <h2 class="section-title">Built different.<br/><em>By design.</em></h2>
       <a href="about.html" class="btn-gold" style="margin-top:2rem; display:inline-block">Our Story</a>
     </div>
@@ -323,6 +355,167 @@
     </div>
   </div>
 </section>
+
+<!-- GOLD STATEMENTS / QUOTES -->
+<section class="quotes-section">
+
+  <!-- Header -->
+  <div class="container">
+    <div class="quotes-header">
+      <span class="section-label reveal">Trusted by the world</span>
+      <h2 class="section-title reveal" style="margin-top:0.75rem; margin-bottom:0.5rem;">What the world says about <em>gold</em></h2>
+      <p class="quotes-sub reveal">Insights from global institutions, economists, and India's financial leaders</p>
+    </div>
+  </div>
+
+  <!-- Row 1 — scrolls left (Institutions) -->
+  <div class="marquee-track">
+    <div class="marquee-inner marquee-left">
+      <div class="q-card"><div class="q-logo-row"><span class="q-tag">Institution</span></div><p>"Gold continues to benefit from geopolitical uncertainty, central bank buying, and investor demand as a long-term store of value."</p><div class="q-footer"><span class="q-source">World Gold Council</span><span class="q-date">May 2026</span></div></div>
+      <div class="q-card"><div class="q-logo-row"><span class="q-tag">Institution</span></div><p>"Gold demand reached record value levels in Q1 2026, driven by investment demand and continued central bank buying."</p><div class="q-footer"><span class="q-source">World Gold Council</span><span class="q-date">Q1 2026</span></div></div>
+      <div class="q-card"><div class="q-logo-row"><span class="q-tag">Research</span></div><p>"Gold prices are forecast to rise further as private investors and central banks continue diversifying into gold."</p><div class="q-footer"><span class="q-source">Goldman Sachs Research</span><span class="q-date">Jan 2026</span></div></div>
+      <div class="q-card"><div class="q-logo-row"><span class="q-tag">Research</span></div><p>"Central bank and investor demand for gold is expected to remain strong through 2026 and beyond."</p><div class="q-footer"><span class="q-source">JPMorgan Chase</span><span class="q-date">Global Research</span></div></div>
+      <div class="q-card"><div class="q-logo-row"><span class="q-tag">Research</span></div><p>"Gold remains one of the most attractive safe-haven assets during economic and market uncertainty."</p><div class="q-footer"><span class="q-source">Goldman Sachs</span><span class="q-date">Commodities 2026</span></div></div>
+      <div class="q-card"><div class="q-logo-row"><span class="q-tag">Institution</span></div><p>"Gold could perform strongly in periods of slower growth, falling interest rates, and rising global risks."</p><div class="q-footer"><span class="q-source">World Gold Council</span><span class="q-date">Outlook 2026</span></div></div>
+      <!-- thought leaders -->
+      <div class="q-card q-card-leader"><div class="q-logo-row"><span class="q-tag q-tag-leader">Thought Leader</span></div><p>"Gold is money. Everything else is credit."</p><div class="q-footer"><span class="q-source">J.P. Morgan</span><span class="q-date">Banker &amp; Financier</span></div></div>
+      <div class="q-card q-card-leader"><div class="q-logo-row"><span class="q-tag q-tag-leader">Thought Leader</span></div><p>"Gold is a way of going long on fear."</p><div class="q-footer"><span class="q-source">Warren Buffett</span><span class="q-date">Berkshire Hathaway</span></div></div>
+      <div class="q-card q-card-leader"><div class="q-logo-row"><span class="q-tag q-tag-leader">Thought Leader</span></div><p>"In times of uncertainty, investors have always turned to gold."</p><div class="q-footer"><span class="q-source">Ray Dalio</span><span class="q-date">Bridgewater Associates</span></div></div>
+      <div class="q-card q-card-leader"><div class="q-logo-row"><span class="q-tag q-tag-leader">Thought Leader</span></div><p>"If you don't own gold, you know neither history nor economics."</p><div class="q-footer"><span class="q-source">Ray Dalio</span><span class="q-date">Bridgewater Associates</span></div></div>
+      <div class="q-card q-card-leader"><div class="q-logo-row"><span class="q-tag q-tag-leader">India</span></div><p>"Gold has always been an important financial asset for Indian households."</p><div class="q-footer"><span class="q-source">Nirmala Sitharaman</span><span class="q-date">Finance Minister, India</span></div></div>
+      <div class="q-card q-card-leader"><div class="q-logo-row"><span class="q-tag q-tag-leader">India</span></div><p>"Indian families consider gold both an investment and a symbol of financial security."</p><div class="q-footer"><span class="q-source">Shaktikanta Das</span><span class="q-date">Former RBI Governor</span></div></div>
+      <div class="q-card q-card-leader"><div class="q-logo-row"><span class="q-tag q-tag-leader">India</span></div><p>"Digital gold is making gold investment more accessible to younger Indians."</p><div class="q-footer"><span class="q-source">Nithin Kamath</span><span class="q-date">Zerodha</span></div></div>
+      <div class="q-card q-card-leader"><div class="q-logo-row"><span class="q-tag q-tag-leader">India</span></div><p>"Gold remains one of the most trusted assets across generations in India."</p><div class="q-footer"><span class="q-source">Uday Kotak</span><span class="q-date">Kotak Mahindra Bank</span></div></div>
+      <div class="q-card q-card-leader"><div class="q-logo-row"><span class="q-tag q-tag-leader">India</span></div><p>"For centuries, gold has been a trusted store of value for Indian households."</p><div class="q-footer"><span class="q-source">Reserve Bank of India</span><span class="q-date">Central Bank</span></div></div>
+    </div>
+  </div>
+
+</section>
+
+<style>
+.quotes-section {
+  padding: 5rem 0 5.5rem;
+  background: var(--maroon-deep, #1a0a0a);
+  overflow: hidden;
+  position: relative;
+}
+
+.quotes-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.quotes-header .section-title {
+  color: #fff;
+}
+.quotes-sub {
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.45);
+  margin-top: 0.5rem;
+  font-weight: 400;
+}
+.marquee-track {
+  overflow: hidden;
+  padding: 0.75rem 0;
+  margin: 0 3.5rem;
+  border-radius: 12px;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+.marquee-inner {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content;
+  padding: 0 0.75rem;
+}
+.marquee-left  { animation: scrollLeft  90s linear infinite; }
+.marquee-right { animation: scrollRight 55s linear infinite; }
+.marquee-inner:hover { animation-play-state: paused; }
+@keyframes scrollLeft  { from { transform: translateX(0); }    to { transform: translateX(-50%); } }
+@keyframes scrollRight { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+
+/* Card base */
+.q-card {
+  flex-shrink: 0;
+  width: 300px;
+  background: rgba(255,255,255,0.035);
+  border: 1px solid rgba(212,146,14,0.15);
+  border-radius: 16px;
+  padding: 1.4rem 1.5rem 1.2rem;
+  position: relative;
+  transition: border-color 0.2s, background 0.2s;
+  cursor: default;
+}
+.q-card:hover {
+  background: rgba(255,255,255,0.055);
+  border-color: rgba(212,146,14,0.35);
+}
+
+/* Tag row */
+.q-logo-row { margin-bottom: 0.9rem; }
+.q-tag {
+  display: inline-block;
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  font-family: 'Sora', sans-serif;
+  color: var(--gold, #D4920E);
+  background: rgba(212,146,14,0.1);
+  border: 1px solid rgba(212,146,14,0.2);
+  border-radius: 20px;
+  padding: 0.2rem 0.65rem;
+}
+.q-tag-leader {
+  color: rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.1);
+}
+
+/* Quote text */
+.q-card p {
+  font-size: 0.875rem;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.82);
+  margin: 0 0 1.1rem;
+  font-style: italic;
+}
+
+/* Footer */
+.q-footer {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding-top: 0.8rem;
+}
+.q-source {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--gold, #D4920E);
+  font-family: 'Sora', sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.q-date {
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.3);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Leader variant */
+.q-card-leader {
+  background: rgba(212,146,14,0.04);
+  border-color: rgba(255,255,255,0.08);
+}
+.q-card-leader:hover {
+  background: rgba(212,146,14,0.08);
+  border-color: rgba(212,146,14,0.2);
+}
+.q-card-leader .q-source { color: rgba(255,255,255,0.75); }
+</style>
 
 <!-- CTA BANNER -->
 <!-- TESTIMONIALS -->
@@ -376,12 +569,12 @@
   </div>
   <div class="container cta-content">
     <h2 class="reveal">Join us in building the<br/><em>future of gold savings.</em></h2>
-    <p class="reveal">Whether you're a jeweller, distributor, or financial institution — there's a place for you in the Quickbee ecosystem.</p>
+    <p class="reveal">Whether you're a jeweller, distributor, or financial institution — there's a place for you in the QuickBee ecosystem.</p>
     <div class="cta-actions reveal">
 <a
   class="btn-gold"
   target="_self"
-  href="mailto:hello@quickbee.in?subject=Partnership%20Enquiry%20-%20Quickbee&body=Hi%20Quickbee%20Team%2C%0A%0AI%20am%20interested%20in%20partnering%20with%20Quickbee.%0A%0AName%3A%20%0AOrganisation%3A%20%0APhone%3A%20%0AType%20of%20Partnership%3A%20%0A%0AThank%20you."
+  href="#contact"
 >
   Partner With Us →
 </a>      <a href="services.html" class="btn-outline-light">Explore Services</a>
@@ -396,7 +589,7 @@
        <a href="index.html" class="nav-logo">
   <img src="logo.png" alt="Quickbee" class="nav-logo-img">
 </a>
-      <p>Quickbee Technology Ventures Pvt Ltd</p>
+      <p>QuickBee Technology Ventures Pvt Ltd</p>
       <p style="margin-top:0.5rem; font-size:0.8rem; opacity:0.5">Redefining Gold Savings for the Digital Age</p>
       <div class="footer-social">
         <a href="" target="_blank" rel="noopener" aria-label="Instagram">
@@ -419,6 +612,7 @@
       <a href="index.html">Home</a>
       <a href="about.html">About Us</a>
       <a href="services.html">Services</a>
+	  <a href="faq.html">FAQ</a>
       <a href="terms.html">Terms &amp; Conditions</a>
       <!-- <a href="team.html">Team</a> -->
     </div>
@@ -429,22 +623,289 @@
       <a href="services.html">White Label</a>
       <a href="services.html">API Integrations</a>
     </div>
-    <div class="footer-contact">
-      <h4>Get In Touch</h4>
-	        <p style="margin-top:1rem; font-size:0.85rem; opacity:0.6">KC Arcade, Near TV centre, CSEZ
-Ernakulam, Kerala, 682037
-India
-</p>
-<p style="margin-top:1rem; font-size:0.85rem; opacity:0.6">Phone:+918086801662, <br>
-        +919323270902
-
-</p>
-      <a href="mailto:hello@quickbee.in">hello@quickbee.in</a>
-      <p style="margin-top:1rem; font-size:0.85rem; opacity:0.6">©2026 Quickbee Technology Ventures Pvt Ltd. All rights reserved.</p>
-    </div>
+   <div class="footer-contact">
+  <h4>Get In Touch</h4>
+  <p style="margin-top:1rem; font-size:0.85rem; opacity:0.6; line-height:1.7;">
+    KC Arcade, Near TV centre, CSEZ<br>
+    Ernakulam, Kerala, 682037<br>
+    India
+  </p>
+  <p style="margin-top:0.75rem; font-size:0.85rem; opacity:0.6; line-height:2;">
+    <a href="tel:+918086801662" style="color:inherit; text-decoration:none; display:flex; align-items:center; gap:0.4rem;">
+      <span>📞</span> +91 80868 01662
+    </a>
+    <a href="tel:+919323270902" style="color:inherit; text-decoration:none; display:flex; align-items:center; gap:0.4rem; padding-left:1.4rem;">
+      +91 93232 70902
+    </a>
+  </p>
+  <p style="margin-top:0.5rem; font-size:0.85rem;">
+   <a href="mailto:hello@quickbee.in" style="display:flex; align-items:center; gap:0.4rem;">
+  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; opacity:0.7;">
+    <rect x="2" y="4" width="20" height="16" rx="2"/>
+    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+  </svg>
+  hello@quickbee.in
+</a>
+  </p>
+ 
+</div>
+  </div>
+    <div class="footer-bottom">
+    ©2026 QuickBee Technology Ventures Pvt Ltd. All rights reserved.
   </div>
 </footer>
 
 <script src="main.js"></script>
+<!--
+  ╔══════════════════════════════════════════════════════╗
+  ║  QUICKBEE — PARTNER WITH US POPUP                   ║
+  ║  Paste this entire block before </body> in          ║
+  ║  index.html, about.html, services.html, team.html   ║
+  ╚══════════════════════════════════════════════════════╝
+-->
+
+<!-- ── MODAL ─────────────────────────────────────────── -->
+<div id="partnerModal" class="pm-overlay" role="dialog" aria-modal="true" aria-labelledby="pmTitle">
+  <div class="pm-backdrop" id="pmBackdrop"></div>
+  <div class="pm-modal">
+    <div class="pm-bar"></div>
+    <button class="pm-close" id="pmClose" aria-label="Close">✕</button>
+
+    <div class="pm-header">
+      <div class="pm-icon">🤝</div>
+      <div>
+        <h2 id="pmTitle">Partner With Us</h2>
+        <p>Join the QuickBee ecosystem — let's grow together</p>
+      </div>
+    </div>
+
+    <!-- Form -->
+    <form id="partnerForm" enctype="multipart/form-data" novalidate>
+      <div class="pm-row">
+        <div class="pm-field">
+          <label for="pmName">Full Name <span class="req">*</span></label>
+          <input type="text" id="pmName" name="name" placeholder="Your full name" autocomplete="name" />
+          <span class="pm-err" id="errName"></span>
+        </div>
+        <div class="pm-field">
+          <label for="pmOrg">Organization <span class="req">*</span></label>
+          <input type="text" id="pmOrg" name="org" placeholder="Company / shop name" />
+          <span class="pm-err" id="errOrg"></span>
+        </div>
+      </div>
+
+      <div class="pm-row">
+        <div class="pm-field">
+          <label for="pmEmail">Email Address <span class="req">*</span></label>
+          <input type="email" id="pmEmail" name="email" placeholder="you@example.com" autocomplete="email" />
+          <span class="pm-err" id="errEmail"></span>
+        </div>
+        <div class="pm-field">
+          <label for="pmPhone">Phone Number <span class="req">*</span></label>
+          <input type="tel" id="pmPhone" name="phone" placeholder="+91 98765 43210" autocomplete="tel" />
+          <span class="pm-err" id="errPhone"></span>
+        </div>
+      </div>
+
+      <div class="pm-field">
+        <label for="pmType">Type of Partnership <span class="req">*</span></label>
+        <div class="pm-select-wrap">
+          <select id="pmType" name="type">
+            <option value="">— Select a partnership type —</option>
+            <option value="Jeweller Partner">Jeweller Partner</option>
+            <option value="Distribution Partner">Distribution Partner</option>
+            <option value="Lending Partner">Lending Partner</option>
+            <option value="Technology Partner">Technology Partner</option>
+            <option value="Other">Other</option>
+          </select>
+          <span class="pm-arrow">▾</span>
+        </div>
+        <span class="pm-err" id="errType"></span>
+      </div>
+
+      <div class="pm-field">
+        <label>Upload Document <span class="pm-opt">(optional · PDF / JPG / PNG · max 5 MB)</span></label>
+        <label class="pm-upload" id="pmUploadLabel" for="pmDoc">
+          <span>📎</span>
+          <span id="pmFileName">Click to choose file or drag &amp; drop</span>
+          <input type="file" id="pmDoc" name="document" accept=".pdf,.jpg,.jpeg,.png" />
+        </label>
+        <span class="pm-err" id="errDoc"></span>
+      </div>
+
+      <div class="pm-field">
+        <label for="pmMsg">Message <span class="req">*</span></label>
+        <textarea id="pmMsg" name="message" rows="4" placeholder="Tell us about yourself and how you'd like to partner with QuickBee…"></textarea>
+        <div class="pm-char-row">
+          <span class="pm-err" id="errMsg"></span>
+          <span id="pmCharCount" class="pm-count">0 / 1000</span>
+        </div>
+      </div>
+
+      <button type="submit" class="pm-submit" id="pmSubmit">
+        <span id="pmBtnText">Send Partnership Request</span>
+        <span id="pmSpinner" class="pm-spinner" style="display:none;"></span>
+      </button>
+    </form>
+
+    <!-- Success -->
+    <div class="pm-success" id="pmSuccess" style="display:none;">
+      <div class="pm-tick">✓</div>
+      <h3>Request Sent!</h3>
+      <p>Thank you for reaching out. Our team will get back to you within <strong>1–2 business days</strong>.</p>
+      <button class="pm-submit" onclick="closePartnerModal()">Close</button>
+    </div>
+
+    <!-- Server error -->
+    <div class="pm-server-err" id="pmServerErr" style="display:none;"></div>
+  </div>
+</div>
+
+<!-- ── STYLES ─────────────────────────────────────────── -->
+
+<!-- ── SCRIPT ─────────────────────────────────────────── -->
+<script>
+(function(){
+  const modal    = document.getElementById('partnerModal');
+  const form     = document.getElementById('partnerForm');
+  const backdrop = document.getElementById('pmBackdrop');
+  const closeBtn = document.getElementById('pmClose');
+  const fileInput= document.getElementById('pmDoc');
+  const fileName = document.getElementById('pmFileName');
+  const msgArea  = document.getElementById('pmMsg');
+  const charCount= document.getElementById('pmCharCount');
+  const btnText  = document.getElementById('pmBtnText');
+  const spinner  = document.getElementById('pmSpinner');
+  const submitBtn= document.getElementById('pmSubmit');
+  const success  = document.getElementById('pmSuccess');
+  const serverErr= document.getElementById('pmServerErr');
+
+  /* ── Open ── */
+  function openPartnerModal(e){
+    if(e) e.preventDefault();
+    modal.classList.add('active');
+    document.body.style.overflow='hidden';
+    form.style.display='';
+    success.style.display='none';
+    serverErr.style.display='none';
+    form.reset();
+    fileName.textContent='Click to choose file or drag & drop';
+    charCount.textContent='0 / 1000';
+    clearAll();
+  }
+  window.openPartnerModal = openPartnerModal;
+
+  /* ── Close ── */
+  function closePartnerModal(){
+    modal.classList.remove('active');
+    document.body.style.overflow='';
+  }
+  window.closePartnerModal = closePartnerModal;
+
+  /* Bind all "Partner With Us" links */
+ document.querySelectorAll('a.nav-cta, a[href="#contact"]').forEach(el=>{
+    el.addEventListener('click', openPartnerModal);
+  });
+  backdrop.addEventListener('click', closePartnerModal);
+  closeBtn.addEventListener('click', closePartnerModal);
+  document.addEventListener('keydown', e=>{
+    if(e.key==='Escape' && modal.classList.contains('active')) closePartnerModal();
+  });
+
+  /* ── Char counter ── */
+  msgArea.addEventListener('input',()=>{
+    const n=msgArea.value.length;
+    charCount.textContent=n+' / 1000';
+    charCount.style.color=n>900?'#e53935':'#AA7080';
+  });
+
+  /* ── File picker ── */
+  fileInput.addEventListener('change',()=>{
+    const f=fileInput.files[0];
+    if(!f){ fileName.textContent='Click to choose file or drag & drop'; return; }
+    if(f.size>5*1024*1024){
+      showErr('errDoc','File must be under 5 MB');
+      fileInput.value='';
+      fileName.textContent='Click to choose file or drag & drop';
+      return;
+    }
+    clearErr('errDoc');
+    fileName.textContent=f.name;
+  });
+
+  const uploadLabel=document.getElementById('pmUploadLabel');
+  uploadLabel.addEventListener('dragover',e=>{ e.preventDefault(); uploadLabel.style.borderColor='#8B1A3C'; });
+  uploadLabel.addEventListener('dragleave',()=>{ uploadLabel.style.borderColor=''; });
+  uploadLabel.addEventListener('drop',e=>{
+    e.preventDefault(); uploadLabel.style.borderColor='';
+    if(e.dataTransfer.files[0]){ fileInput.files=e.dataTransfer.files; fileInput.dispatchEvent(new Event('change')); }
+  });
+
+  /* ── Validation helpers ── */
+  function showErr(id,msg){
+    const el=document.getElementById(id); if(!el) return;
+    el.textContent=msg;
+    el.closest('.pm-field')?.querySelector('input,select,textarea')?.classList.add('err');
+  }
+  function clearErr(id){
+    const el=document.getElementById(id); if(!el) return;
+    el.textContent='';
+    el.closest('.pm-field')?.querySelector('input,select,textarea')?.classList.remove('err');
+  }
+  function clearAll(){ ['errName','errOrg','errEmail','errPhone','errType','errDoc','errMsg'].forEach(clearErr); }
+
+  /* Live clear on input */
+  [{id:'pmName',err:'errName'},{id:'pmOrg',err:'errOrg'},{id:'pmEmail',err:'errEmail'},
+   {id:'pmPhone',err:'errPhone'},{id:'pmType',err:'errType'},{id:'pmMsg',err:'errMsg'}
+  ].forEach(({id,err})=>{
+    document.getElementById(id)?.addEventListener('input',()=>clearErr(err));
+  });
+
+  function validate(){
+    clearAll(); let ok=true;
+    const v=id=>document.getElementById(id).value.trim();
+    if(v('pmName').length<2)                              { showErr('errName','Please enter your full name'); ok=false; }
+    if(v('pmOrg').length<2)                               { showErr('errOrg','Please enter your organization'); ok=false; }
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v('pmEmail'))) { showErr('errEmail','Please enter a valid email address'); ok=false; }
+    if(!/^[+\d\s\-()\[\]]{7,20}$/.test(v('pmPhone')))    { showErr('errPhone','Please enter a valid phone number'); ok=false; }
+    if(!v('pmType'))                                       { showErr('errType','Please select a partnership type'); ok=false; }
+    if(v('pmMsg').length<20)                               { showErr('errMsg','Please write at least 20 characters'); ok=false; }
+    if(v('pmMsg').length>1000)                             { showErr('errMsg','Message must be under 1000 characters'); ok=false; }
+    return ok;
+  }
+
+  /* ── Submit → PHP ── */
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    if(!validate()) return;
+
+    btnText.style.display='none';
+    spinner.style.display='';
+    submitBtn.disabled=true;
+    serverErr.style.display='none';
+
+    try {
+      const res  = await fetch('send_partner.php',{ method:'POST', body: new FormData(form) });
+      const json = await res.json();
+      if(json.success){
+        form.style.display='none';
+        success.style.display='';
+      } else {
+        const msg = json.errors ? json.errors.join('<br>') : (json.error||'Something went wrong. Please try again.');
+        serverErr.innerHTML='⚠️ '+msg;
+        serverErr.style.display='';
+      }
+    } catch(err){
+      serverErr.textContent='⚠️ Network error — please check your connection and try again.';
+      serverErr.style.display='';
+    } finally {
+      btnText.style.display='';
+      spinner.style.display='none';
+      submitBtn.disabled=false;
+    }
+  });
+
+})();
+</script>
 </body>
 </html>

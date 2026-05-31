@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Terms & Conditions — Quickbee</title>
+  <title>Terms &amp; Conditions — QuickBee</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
   <style>
-    /* ── Terms Page Specific Styles ── */
     .terms-body {
       background: var(--maroon-deep, #1a0a0a);
       padding: 5rem 0 6rem;
@@ -20,8 +19,6 @@
       gap: 4rem;
       align-items: start;
     }
-
-    /* Sticky sidebar TOC */
     .terms-toc {
       position: sticky;
       top: 100px;
@@ -52,12 +49,11 @@
       margin-left: -1px;
       line-height: 1.4;
     }
-    .terms-toc ul li a:hover {
+    .terms-toc ul li a:hover,
+    .terms-toc ul li a.active {
       color: var(--gold, #D4920E);
       border-left-color: var(--gold, #D4920E);
     }
-
-    /* Main content */
     .terms-content {
       color: rgba(255,255,255,0.82);
     }
@@ -66,6 +62,7 @@
       align-items: center;
       gap: 0.75rem;
       margin-bottom: 3rem;
+      flex-wrap: wrap;
     }
     .terms-meta span {
       font-size: 0.82rem;
@@ -80,7 +77,6 @@
       font-size: 0.78rem;
       font-weight: 600;
     }
-
     .terms-section {
       margin-bottom: 3rem;
       scroll-margin-top: 110px;
@@ -141,8 +137,6 @@
       background: var(--gold, #D4920E);
       opacity: 0.6;
     }
-
-    /* Risk disclosure box */
     .risk-box {
       background: rgba(212,146,14,0.06);
       border: 1px solid rgba(212,146,14,0.25);
@@ -165,8 +159,6 @@
       color: rgba(255,255,255,0.80);
       margin: 0;
     }
-
-    /* Contact card */
     .contact-card {
       background: rgba(255,255,255,0.03);
       border: 1px solid rgba(255,255,255,0.08);
@@ -182,8 +174,6 @@
       text-decoration: none;
     }
     .contact-card a:hover { text-decoration: underline; }
-
-    /* Acceptance banner */
     .acceptance-bar {
       background: linear-gradient(135deg, rgba(212,146,14,0.1), rgba(212,146,14,0.04));
       border: 1px solid rgba(212,146,14,0.2);
@@ -195,9 +185,7 @@
       line-height: 1.7;
       text-align: center;
     }
-    .acceptance-bar strong { color: rgba(255,255,255,0.8); }
-
-    /* Responsive */
+    .acceptance-bar strong { color: rgba(255,255,255,0.9); }
     @media (max-width: 900px) {
       .terms-layout { grid-template-columns: 1fr; gap: 2rem; }
       .terms-toc { display: none; }
@@ -209,7 +197,7 @@
 <!-- NAV -->
 <nav class="nav" id="nav">
   <a href="index.html" class="nav-logo">
-    <img src="logo.png" alt="Quickbee" class="nav-logo-img">
+    <img src="logo.png" alt="QuickBee" class="nav-logo-img">
   </a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
@@ -224,18 +212,20 @@
 
 <!-- PAGE HERO -->
 <section class="page-hero">
-  <div class="page-hero-bg"></div>
+  <div class="page-hero-bg">
+    <div class="gold-orb orb1"></div>
+    <div class="gold-orb orb2"></div>
+  </div>
   <div class="container page-hero-content">
     <span class="section-label">Legal</span>
     <h1>Terms &amp; <em>Conditions</em></h1>
-    <p>Please read these Terms carefully before using the Quickbee Platform. By accessing or using our services, you agree to be bound by these Terms.</p>
+    <p>Please read these Terms carefully before using the QuickBee Platform. By accessing or using our services, you agree to be bound by these Terms.</p>
   </div>
 </section>
 
 <!-- TERMS BODY -->
 <div class="terms-body">
   <div class="container">
-
     <div class="terms-layout">
 
       <!-- SIDEBAR TOC -->
@@ -244,31 +234,29 @@
         <ul>
           <li><a href="#s1">1. Definitions</a></li>
           <li><a href="#s2">2. Eligibility</a></li>
-          <li><a href="#s3">3. Account Registration</a></li>
-          <li><a href="#s4">4. Services Offered</a></li>
-          <li><a href="#s5">5. Digital Gold Services</a></li>
-          <li><a href="#s6">6. Payments &amp; Transactions</a></li>
-          <li><a href="#s7">7. Payment Failures &amp; Reversals</a></li>
-          <li><a href="#s8">8. Auto-Debits &amp; Recurring Plans</a></li>
-          <li><a href="#s9">9. Redemption &amp; Withdrawal</a></li>
-          <li><a href="#s10">10. Rewards, Cashback &amp; Promotions</a></li>
-          <li><a href="#s11">11. KYC &amp; Compliance</a></li>
-          <li><a href="#s12">12. Taxes</a></li>
-          <li><a href="#s13">13. User Responsibilities</a></li>
-          <li><a href="#s14">14. Intellectual Property</a></li>
-          <li><a href="#s15">15. Third-Party Services</a></li>
-          <li><a href="#s16">16. Limitation of Liability</a></li>
-          <li><a href="#s17">17. Disclaimers</a></li>
-          <li><a href="#s18">18. Force Majeure</a></li>
-          <li><a href="#s19">19. Account Suspension &amp; Termination</a></li>
-          <li><a href="#s20">20. Privacy</a></li>
-          <li><a href="#s21">21. Communications</a></li>
-          <li><a href="#s22">22. Governing Law</a></li>
-          <li><a href="#s23">23. Dispute Resolution</a></li>
-          <li><a href="#s24">24. Modification of Terms</a></li>
-          <li><a href="#s25">25. Severability</a></li>
-          <li><a href="#s26">26. Entire Agreement</a></li>
-          <li><a href="#s27">27. Contact &amp; Grievance Officer</a></li>
+          <li><a href="#s3">3. Account Registration &amp; Security</a></li>
+          <li><a href="#s4">4. Nature of the Digital Gold Scheme</a></li>
+          <li><a href="#s5">5. Payments &amp; Transactions</a></li>
+          <li><a href="#s6">6. Payment Failures &amp; Reversals</a></li>
+          <li><a href="#s7">7. Redemption Policy</a></li>
+          <li><a href="#s8">8. Non-Redemption After Maturity</a></li>
+          <li><a href="#s9">9. Nominee &amp; Death Claims</a></li>
+          <li><a href="#s10">10. KYC &amp; PAN Compliance</a></li>
+          <li><a href="#s11">11. Rewards, Cashback &amp; Promotions</a></li>
+          <li><a href="#s12">12. User Responsibilities</a></li>
+          <li><a href="#s13">13. Third-Party Services</a></li>
+          <li><a href="#s14">14. Taxes &amp; Charges</a></li>
+          <li><a href="#s15">15. Limitation of Liability</a></li>
+          <li><a href="#s16">16. Disclaimers</a></li>
+          <li><a href="#s17">17. Force Majeure</a></li>
+          <li><a href="#s18">18. Account Suspension &amp; Termination</a></li>
+          <li><a href="#s19">19. Privacy &amp; Communications</a></li>
+          <li><a href="#s20">20. Governing Law &amp; Jurisdiction</a></li>
+          <li><a href="#s21">21. Dispute Resolution</a></li>
+          <li><a href="#s22">22. Modification of Terms</a></li>
+          <li><a href="#s23">23. Severability</a></li>
+          <li><a href="#s24">24. Entire Agreement</a></li>
+          <li><a href="#s25">25. Customer Support &amp; Grievance Officer</a></li>
         </ul>
       </aside>
 
@@ -276,285 +264,266 @@
       <main class="terms-content">
 
         <div class="terms-meta">
-          <span class="badge">Effective Date: 26-05-2026</span>
+          <span class="badge">Effective Date: June 1, 2026</span>
           <span>·</span>
-          <span>Quickbee Technology Ventures Pvt Ltd</span>
+          <span>QuickBee Technology Ventures Pvt Ltd</span>
         </div>
 
         <p style="font-size:0.95rem; line-height:1.9; color:rgba(255,255,255,0.65); margin-bottom:2.5rem;">
-          Welcome to Quickbee. These Terms &amp; Conditions ("Terms") govern your access to and use of the Quickbee website, mobile application, products, services, digital gold offerings, payment features, rewards, and associated services (collectively referred to as the "Platform"). By accessing, registering, browsing, or using the Platform, you agree to be legally bound by these Terms, our Privacy Policy, and any other policies or guidelines issued by Quickbee from time to time. If you do not agree to these Terms, please do not use the Platform.
+          Welcome to QuickBee. These Terms &amp; Conditions ("Terms") govern your access to and use of the QuickBee website, mobile application, digital gold savings schemes, payment services, rewards programs, redemption facilities, and associated services (collectively referred to as the "Platform"). By registering, accessing, browsing, or using the Platform, you agree to be legally bound by these Terms, the Privacy Policy, and any additional policies, guidelines, or notices issued by QuickBee from time to time. If you do not agree to these Terms, please discontinue use of the Platform.
         </p>
 
         <!-- 1 -->
         <div class="terms-section" id="s1">
           <h2><span class="sec-num">01</span> Definitions</h2>
           <ul>
-            <li><strong style="color:rgba(255,255,255,0.8)">"Quickbee", "Company", "we", "our", or "us"</strong> refers to Quickbee and its affiliates, partners, vendors, successors, and assigns.</li>
-            <li><strong style="color:rgba(255,255,255,0.8)">"User", "Customer", "you", or "your"</strong> refers to any individual or entity accessing or using the Platform.</li>
-            <li><strong style="color:rgba(255,255,255,0.8)">"Digital Gold"</strong> means gold purchased digitally through the Platform and backed by physical gold through partnered service providers, vaulting partners, refiners, trustees, or custodians.</li>
-            <li><strong style="color:rgba(255,255,255,0.8)">"Wallet"</strong> refers to the digital account maintained within the Platform for transactions, balances, rewards, cashback, or investments.</li>
-            <li><strong style="color:rgba(255,255,255,0.8)">"Merchant"</strong> means any shopkeeper, trader, vendor, partner, or business associated with Quickbee.</li>
-            <li><strong style="color:rgba(255,255,255,0.8)">"Transaction"</strong> means any payment, purchase, redemption, transfer, withdrawal, investment, or sale performed on the Platform.</li>
+            <li><strong style="color:rgba(255,255,255,0.9)">"QuickBee", "Company", "we", "our", or "us"</strong> refers to QuickBee and its affiliates, successors, assigns, employees, partners, merchants, vendors, and service providers.</li>
+            <li><strong style="color:rgba(255,255,255,0.9)">"User", "Customer", "you", or "your"</strong> refers to any individual accessing or using the Platform.</li>
+            <li><strong style="color:rgba(255,255,255,0.9)">"Digital Gold Scheme"</strong> refers to the 11-month digital gold savings and redemption scheme facilitated through QuickBee.</li>
+            <li><strong style="color:rgba(255,255,255,0.9)">"Jewellery Partner"</strong> refers to the authorized jewellery merchant associated with a specific scheme.</li>
+            <li><strong style="color:rgba(255,255,255,0.9)">"Redemption"</strong> means conversion of accumulated scheme value into jewellery or cash.</li>
+            <li><strong style="color:rgba(255,255,255,0.9)">"Nominee"</strong> means the individual designated by the customer to receive eligible benefits upon the customer's death.</li>
+            <li><strong style="color:rgba(255,255,255,0.9)">"Wallet"</strong> refers to any balance, reward, or settlement account maintained within the Platform.</li>
           </ul>
         </div>
 
         <!-- 2 -->
         <div class="terms-section" id="s2">
           <h2><span class="sec-num">02</span> Eligibility</h2>
-          <p>2.1 Users must be at least 18 years old and legally capable of entering into binding contracts under applicable laws.</p>
-          <p>2.2 By using the Platform, you confirm that:</p>
+          <p>2.1 Users must be at least 18 years old and legally competent to enter into binding agreements under applicable laws.</p>
+          <p>2.2 By using the Platform, users confirm that:</p>
           <ul>
-            <li>The information provided by you is accurate and complete.</li>
-            <li>You are using your own bank account, UPI ID, card, or payment instrument.</li>
-            <li>You shall not use the Platform for illegal, fraudulent, speculative, or unauthorized activities.</li>
+            <li>All information submitted is true, accurate, and complete.</li>
+            <li>Transactions are conducted using payment instruments belonging to the user.</li>
+            <li>The Platform will not be used for illegal, fraudulent, speculative, or unauthorized purposes.</li>
           </ul>
-          <p>2.3 Quickbee reserves the right to suspend or terminate accounts that provide false information or violate these Terms.</p>
+          <p>2.3 Only one QuickBee account shall be permitted per registered mobile number unless otherwise specifically approved by QuickBee.</p>
+          <p>2.4 QuickBee reserves the right to suspend, merge, restrict, or terminate duplicate accounts or accounts created in violation of this policy.</p>
+          <p>2.5 QuickBee reserves the right to suspend or terminate accounts providing false information or violating these Terms.</p>
         </div>
 
         <!-- 3 -->
         <div class="terms-section" id="s3">
-          <h2><span class="sec-num">03</span> Account Registration</h2>
-          <p>3.1 To access certain services, users may be required to create an account.</p>
-          <p>3.2 Users are responsible for maintaining confidentiality of login credentials, restricting unauthorized access to their account, and all activities occurring under their account.</p>
-          <p>3.3 Quickbee shall not be liable for any unauthorized access caused by negligence, sharing of credentials, device compromise, phishing, malware, or user misconduct.</p>
-          <p>3.4 Quickbee may require OTP verification, KYC verification, PAN verification, Aadhaar verification, or other identity checks as mandated by law or partners.</p>
+          <h2><span class="sec-num">03</span> Account Registration &amp; Security</h2>
+          <p>3.1 Users may be required to register using mobile number, OTP verification, email address, KYC details, PAN details, and other information as required.</p>
+          <p>3.2 Users are solely responsible for maintaining confidentiality of login credentials, securing their devices and accounts, and all activities occurring under their account.</p>
+          <p>3.3 QuickBee shall not be liable for unauthorized access resulting from sharing of credentials, phishing attacks, device compromise, malware, or user negligence.</p>
+          <p>3.4 QuickBee may conduct identity verification, fraud screening, device verification, or risk assessments at any time.</p>
         </div>
 
         <!-- 4 -->
         <div class="terms-section" id="s4">
-          <h2><span class="sec-num">04</span> Services Offered</h2>
-          <p>Quickbee may provide one or more of the following services:</p>
-          <ul>
-            <li>Digital gold purchase and sale</li>
-            <li>Gold savings plans</li>
-            <li>Gold-backed rewards and cashback</li>
-            <li>UPI-based micro-investments</li>
-            <li>Merchant-linked investment programs</li>
-            <li>Referral and loyalty programs</li>
-            <li>Wallet and rewards systems</li>
-            <li>Payment processing</li>
-            <li>Financial technology services</li>
-            <li>Promotional campaigns and offers</li>
-          </ul>
-          <p>The availability of services may vary by geography, regulatory permissions, or partnerships.</p>
+          <h2><span class="sec-num">04</span> Nature of the Digital Gold Scheme</h2>
+          <p>4.1 QuickBee operates an 11-month digital gold savings scheme similar to jewellery savings schemes traditionally offered by jewellery retailers.</p>
+          <p>4.2 Customers may contribute monthly or periodically through approved payment methods.</p>
+          <p>4.3 Upon completion of the 11-month tenure, customers must redeem their accumulated value either towards jewellery purchases from the respective Jewellery Partner, or through cash redemption subject to applicable fees and deductions.</p>
+          <p>4.4 The applicable redemption value shall be based on prevailing gold prices, partner pricing, taxes, platform fees, applicable deductions, and operational charges.</p>
+          <p>4.5 Digital gold prices displayed on the Platform are dynamic and may change in real time based on market conditions.</p>
+          <p>4.6 The gold rate displayed on the Platform at the time of successful transaction processing shall be the applicable rate for the transaction.</p>
+          <p>4.7 QuickBee does not guarantee returns, appreciation, profit, fixed value, liquidity, or investment performance.</p>
+          <p>4.8 Digital gold is not a bank deposit and is not insured by any governmental insurance program unless explicitly stated.</p>
         </div>
 
         <!-- 5 -->
         <div class="terms-section" id="s5">
-          <h2><span class="sec-num">05</span> Digital Gold Services</h2>
-          <p>5.1 Digital gold purchased through the Platform is facilitated through authorized third-party providers, custodians, refiners, trustees, or vaulting agencies.</p>
-          <p>5.2 Gold prices displayed on the Platform are dynamic and may change in real time based on market conditions.</p>
-          <p>5.3 Once a transaction is confirmed and processed, the applicable gold rate at the time of successful transaction shall apply.</p>
-          <p>5.4 The quantity of gold allotted may vary depending on market price fluctuations, taxes, processing charges, gateway charges, applicable fees, and spread margins.</p>
-          <p>5.5 Digital gold purchases are subject to minimum and maximum transaction limits as determined by Quickbee or regulatory authorities.</p>
-          <p>5.6 Quickbee does not guarantee profits, appreciation, returns, or liquidity on digital gold investments.</p>
-          <p>5.7 Gold holdings displayed in the app may be rounded for display purposes.</p>
-          <p>5.8 Physical redemption of gold may be subject to minimum quantity requirements, delivery charges, manufacturing charges, hallmarking charges, packaging charges, geographic limitations, and availability of products.</p>
-          <p>5.9 Redemption timelines may vary depending on logistics, verification, partner processing, or unforeseen operational circumstances.</p>
-          <p>5.10 Users acknowledge that digital gold is not a bank deposit and is not insured by any governmental insurance program unless explicitly stated.</p>
+          <h2><span class="sec-num">05</span> Payments &amp; Transactions</h2>
+          <p>5.1 Users may make payments through any of the payment methods made available by the authorized payment partner, including UPI, debit cards, credit cards, net banking, wallets, QR code payments, and other approved payment methods. Availability may vary depending on the payment partner, banking network, geography, or operational limitations.</p>
+          <p>5.2 All payments are subject to successful authorization, banking confirmation, fraud checks, compliance verification, and partner approval.</p>
+          <p>5.3 QuickBee reserves the right to reject, delay, hold, reverse, or cancel any transaction suspected to be fraudulent, unauthorized, suspicious, non-compliant, or high-risk.</p>
+          <p>5.4 Users acknowledge that payment confirmations may be delayed due to banking downtime, UPI server issues, payment gateway failures, network failures, technical maintenance, or third-party operational delays.</p>
+          <p>5.5 Transactions shall be deemed successful only when reflected as successful on the Platform.</p>
         </div>
 
         <!-- 6 -->
         <div class="terms-section" id="s6">
-          <h2><span class="sec-num">06</span> Payments &amp; Transactions</h2>
-          <p>6.1 Users may make payments through UPI, net banking, debit cards, credit cards, wallets, payment gateways, QR code payments, or other approved payment methods.</p>
-          <p>6.2 Users authorize Quickbee and its payment partners to process payments on their behalf.</p>
-          <p>6.3 All transactions are subject to successful authorization and verification.</p>
-          <p>6.4 Quickbee reserves the right to reject, hold, delay, or cancel any transaction suspected to be fraudulent, suspicious, unauthorized, in violation of applicable laws, or high risk.</p>
-          <p>6.5 Transaction confirmations may be delayed due to banking network downtime, UPI server issues, gateway failures, technical maintenance, third-party provider delays, or regulatory verification requirements.</p>
-          <p>6.6 In certain cases, debits may occur without immediate confirmation. Users are advised to wait for reconciliation timelines before raising disputes.</p>
+          <h2><span class="sec-num">06</span> Payment Failures, Refunds &amp; Reversals</h2>
+          <p>6.1 If a payment fails or remains pending, the amount may be automatically reversed by the bank or payment provider. Reversal timelines may vary between 3 to 15 business days depending on the banking network or payment provider.</p>
+          <p>6.2 If a customer's account is debited but gold is not credited, the transaction shall remain under reconciliation. QuickBee may request bank references, transaction IDs, screenshots, or statements. Resolution shall occur only after successful verification.</p>
+          <p>6.3 QuickBee shall not be liable for delays caused by banks, NPCI, payment gateways, card networks, or third-party service providers.</p>
+          <p>6.4 Users shall not initiate fraudulent chargebacks or false disputes.</p>
+          <p>6.5 QuickBee reserves the right to suspend accounts involved in fraudulent disputes, payment abuse, unauthorized transactions, or manipulation attempts.</p>
+          <p>6.6 In case of duplicate credit or erroneous credit, QuickBee reserves the right to reverse or recover excess amounts or balances.</p>
         </div>
 
         <!-- 7 -->
         <div class="terms-section" id="s7">
-          <h2><span class="sec-num">07</span> Payment Failures &amp; Reversals</h2>
-          <p>7.1 A transaction shall be deemed successful only when reflected as successful on the Platform and acknowledged by Quickbee or its authorized partners.</p>
-          <p>7.2 In case of payment failure, pending transactions, duplicate debits, or timeout errors, the amount may be automatically reversed by the bank or payment provider. Reversal timelines may vary between 3 to 15 business days depending on the payment method and banking partner.</p>
-          <p>7.3 If a user's bank account is debited but gold is not credited, the transaction shall remain under reconciliation and credit or reversal shall occur only after successful verification.</p>
-          <p>7.4 In case of duplicate or erroneous credit due to technical reasons, Quickbee reserves the right to reverse or recover the excess amount or gold balance.</p>
-          <p>7.5 Users shall not initiate chargebacks or payment disputes without first contacting Quickbee support. Fraudulent chargebacks or abuse of payment systems may result in account suspension, permanent blocking, legal proceedings, or reporting to financial institutions.</p>
-          <p>7.6 Quickbee shall not be responsible for losses arising from incorrect UPI IDs, bank details, wallet addresses, QR scans, or user-entered information.</p>
+          <h2><span class="sec-num">07</span> Redemption Policy</h2>
+          <p>7.1 Upon completion of the 11-month scheme tenure, customers must redeem their accumulated balance.</p>
+          <p>7.2 Redemption may occur through jewellery redemption from the respective Jewellery Partner, or cash redemption.</p>
+          <p>7.3 Jewellery redemption is subject to product availability, partner operational policies, identity verification, and applicable taxes and charges.</p>
+          <p>7.4 For jewellery redemption, the same registered customer who subscribed to the scheme must be physically present at the Jewellery Partner location during redemption.</p>
+          <p>7.5 Customers may be required to provide government-issued ID proof, OTP verification, registered mobile verification, and additional KYC documents.</p>
+          <p>7.6 Jewellery redemption may be refused if identity verification fails, the redeeming individual does not match the registered customer, or compliance concerns arise.</p>
+          <p>7.7 Cash redemption requests may be subject to platform fees, banking charges, processing charges, taxes, and other applicable deductions.</p>
+          <p>7.8 Physical delivery timelines for jewellery or products may vary depending on product availability, logistics operations, geographic location, verification requirements, holidays, or force majeure events.</p>
+          <p>7.9 Once jewellery redemption orders are processed or confirmed, cancellation may not be permitted.</p>
+          <p>7.10 When redemption towards jewellery is requested, jewellery purchases from the respective Jewellery Partner can be made only after 48 hours from the time of successful redemption request confirmation.</p>
+          <p>7.11 The waiting period may be required for transaction verification, settlement processing, gold allocation confirmation, compliance checks, and partner reconciliation.</p>
         </div>
 
         <!-- 8 -->
         <div class="terms-section" id="s8">
-          <h2><span class="sec-num">08</span> Auto-Debits &amp; Recurring Plans</h2>
-          <p>8.1 Users may voluntarily subscribe to recurring savings or investment plans.</p>
-          <p>8.2 By enabling auto-debit mandates, users authorize Quickbee and its partners to periodically debit the selected payment method.</p>
-          <p>8.3 Users may cancel recurring plans subject to applicable conditions.</p>
-          <p>8.4 Failed auto-debits due to insufficient funds, mandate failures, expired cards, or banking restrictions may lead to cancellation or suspension of the plan.</p>
+          <h2><span class="sec-num">08</span> Non-Redemption After Maturity</h2>
+          <p>8.1 If redemption is not completed within the applicable redemption period after maturity, the redemption value may be refunded to the original payment source used by the customer, or the amount may be retained in a non-interest-bearing account until disputes, verification requirements, or compliance checks are resolved.</p>
+          <p>8.2 QuickBee shall not provide any interest, compensation, appreciation, or returns on unredeemed, pending, held, or disputed balances.</p>
         </div>
 
         <!-- 9 -->
         <div class="terms-section" id="s9">
-          <h2><span class="sec-num">09</span> Redemption &amp; Withdrawal Process</h2>
-          <p>9.1 Users may redeem or sell digital gold subject to applicable eligibility criteria and minimum holding requirements.</p>
-          <p>9.2 Redemption requests may be processed only after identity verification, KYC compliance, fraud screening, and successful confirmation of holdings.</p>
-          <p>9.3 Quickbee reserves the right to reject redemption requests suspected to be fraudulent, request additional verification documents, or temporarily hold withdrawals for risk review.</p>
-          <p>9.4 Physical delivery timelines may vary based on product availability, courier service availability, geographic restrictions, holidays, or force majeure events.</p>
-          <p>9.5 Once physical redemption orders are confirmed, cancellation may not be permitted.</p>
-          <p>9.6 Taxes, delivery charges, making charges, insurance charges, and other applicable fees may be deducted during redemption.</p>
-          <p>9.7 Bank withdrawals may only be processed to verified bank accounts registered in the user's name.</p>
+          <h2><span class="sec-num">09</span> Nominee &amp; Death Claims</h2>
+          <p>9.1 Customers may nominate an eligible nominee during registration or through permitted account update processes.</p>
+          <p>9.2 In the event of death of the customer or inability of the registered customer to be physically present during redemption, the registered nominee may become eligible to act on behalf of the customer subject to successful KYC verification, submission of supporting documents, identity verification, compliance checks, and approval by QuickBee and/or the Jewellery Partner.</p>
+          <p>9.3 QuickBee reserves the right to reject, delay, or hold claims where documentation is incomplete, legal disputes exist, verification fails, or fraud is suspected.</p>
+          <p>9.4 QuickBee reserves the right to request additional documentation including medical records, authorization letters, relationship proof, death certificate, government-issued identity proof, and any other documents required for verification or legal compliance.</p>
         </div>
 
         <!-- 10 -->
         <div class="terms-section" id="s10">
-          <h2><span class="sec-num">10</span> Rewards, Cashback &amp; Promotions</h2>
-          <p>10.1 Quickbee may offer cashback, rewards, referral bonuses, promotional gold, coupons, or loyalty benefits.</p>
-          <p>10.2 Rewards may be subject to expiry dates, minimum transaction values, merchant participation, usage limits, and geographic restrictions.</p>
-          <p>10.3 Quickbee reserves the right to modify, suspend, revoke, or cancel any promotional campaign without prior notice.</p>
-          <p>10.4 Rewards obtained through fraudulent activity, fake referrals, abuse, manipulation, bots, or misuse may be revoked.</p>
-          <p>10.5 Cashback or rewards may be credited in the form of gold units, wallet balance, reward points, coupons, or promotional credits.</p>
-          <p>10.6 Rewards may not be transferable, exchangeable for cash, or redeemable outside permitted conditions.</p>
+          <h2><span class="sec-num">10</span> KYC &amp; PAN Compliance</h2>
+          <p>10.1 QuickBee may require customers to complete KYC verification for accessing certain features, transaction limits, withdrawals, or redemptions.</p>
+          <p>10.2 KYC documents may include PAN card, Aadhaar card, address proof, selfie verification, and bank verification.</p>
+          <p>10.3 If the total amount paid or invested by a customer exceeds INR 2,00,000 in a financial year, the customer shall be required to submit PAN card details or copies in accordance with applicable Income Tax laws and compliance requirements.</p>
+          <p>10.4 Failure to provide PAN details or required documentation may result in transaction restrictions, redemption delays, withdrawal limitations, temporary suspension, or compliance reporting obligations.</p>
+          <p>10.5 Users consent to identity verification through authorized agencies and databases.</p>
         </div>
 
         <!-- 11 -->
         <div class="terms-section" id="s11">
-          <h2><span class="sec-num">11</span> KYC &amp; Compliance</h2>
-          <p>11.1 Users may be required to complete KYC verification for certain features, transactions, or limits.</p>
-          <p>11.2 Quickbee may suspend services if KYC documents are incomplete, identity verification fails, regulatory requirements are not met, or suspicious activity is detected.</p>
-          <p>11.3 Users consent to verification of identity through authorized agencies and databases.</p>
+          <h2><span class="sec-num">11</span> Rewards, Cashback &amp; Promotions</h2>
+          <p>11.1 QuickBee may provide cashback, gold rewards, referral bonuses, promotional benefits, coupons, and loyalty rewards.</p>
+          <p>11.2 Promotional benefits may be subject to expiry dates, merchant participation, usage restrictions, eligibility criteria, and geographic restrictions.</p>
+          <p>11.3 QuickBee reserves the right to modify, suspend, or cancel any promotion without prior notice.</p>
+          <p>11.4 Fraudulent referrals, fake accounts, bots, or abuse of promotional systems may result in cancellation of rewards, account suspension, or legal action.</p>
         </div>
 
         <!-- 12 -->
         <div class="terms-section" id="s12">
-          <h2><span class="sec-num">12</span> Taxes</h2>
-          <p>12.1 Users are solely responsible for payment of applicable taxes arising from transactions conducted through the Platform.</p>
-          <p>12.2 GST, TDS, TCS, stamp duties, or other levies may apply depending on the transaction type and applicable laws.</p>
-          <p>12.3 Quickbee may deduct applicable taxes where required by law.</p>
+          <h2><span class="sec-num">12</span> User Responsibilities</h2>
+          <p>Users agree not to:</p>
+          <ul>
+            <li>Use the Platform for unlawful purposes</li>
+            <li>Conduct fraudulent activities</li>
+            <li>Manipulate rewards or pricing</li>
+            <li>Reverse engineer the Platform</li>
+            <li>Upload malicious software</li>
+            <li>Share false information</li>
+            <li>Use unauthorized payment methods</li>
+            <li>Impersonate another individual</li>
+          </ul>
+          <p>Users remain solely responsible for all activities conducted through their account.</p>
         </div>
 
         <!-- 13 -->
         <div class="terms-section" id="s13">
-          <h2><span class="sec-num">13</span> User Responsibilities</h2>
-          <p>Users agree not to:</p>
-          <ul>
-            <li>Use the Platform for unlawful activities</li>
-            <li>Attempt unauthorized access to systems</li>
-            <li>Reverse engineer the Platform</li>
-            <li>Use bots, scripts, automation, or scraping tools</li>
-            <li>Manipulate pricing or promotions</li>
-            <li>Conduct fraudulent transactions</li>
-            <li>Upload harmful software or malicious code</li>
-            <li>Impersonate another individual or entity</li>
-          </ul>
-          <p>Users shall be solely responsible for all activities conducted through their account.</p>
+          <h2><span class="sec-num">13</span> Third-Party Services</h2>
+          <p>13.1 QuickBee may integrate with jewellery partners, payment gateways, banks, UPI providers, vaulting partners, logistics providers, verification agencies, and technology providers.</p>
+          <p>13.2 QuickBee shall not be responsible for acts, omissions, delays, failures, or policies of third-party providers.</p>
+          <p>13.3 Users may additionally be subject to terms imposed by third-party partners.</p>
         </div>
 
         <!-- 14 -->
         <div class="terms-section" id="s14">
-          <h2><span class="sec-num">14</span> Intellectual Property</h2>
-          <p>All trademarks, logos, designs, software, graphics, content, and materials on the Platform are owned by or licensed to Quickbee. Users shall not reproduce, distribute, copy, modify, or exploit any content without prior written permission.</p>
+          <h2><span class="sec-num">14</span> Taxes &amp; Charges</h2>
+          <p>14.1 Applicable taxes including GST may apply depending on transaction type and applicable laws.</p>
+          <p>14.2 Users remain solely responsible for payment of taxes arising from transactions.</p>
+          <p>14.3 Platform fees, redemption charges, delivery charges, processing fees, or banking charges may apply depending on the service utilized.</p>
         </div>
 
         <!-- 15 -->
         <div class="terms-section" id="s15">
-          <h2><span class="sec-num">15</span> Third-Party Services</h2>
-          <p>15.1 The Platform may integrate with third-party providers including banks, payment gateways, UPI systems, gold custodians, logistics partners, verification agencies, and technology vendors.</p>
-          <p>15.2 Quickbee is not responsible for the acts, omissions, delays, failures, policies, or services of third-party providers.</p>
-          <p>15.3 Users may also be subject to the terms and conditions of third-party service providers.</p>
+          <h2><span class="sec-num">15</span> Limitation of Liability</h2>
+          <p>15.1 In the event of any dispute, claim, deficiency, operational issue, delay, fraud investigation, technical failure, legal proceeding, or loss whatsoever, the maximum liability payable by QuickBee shall be strictly limited to the actual amount paid by the customer under the relevant scheme or transaction.</p>
+          <p>15.2 QuickBee shall not be liable for loss of profits, market losses, opportunity losses, consequential damages, indirect damages, delays caused by third parties, banking failures, cyber attacks, or service interruptions.</p>
         </div>
 
         <!-- 16 -->
         <div class="terms-section" id="s16">
-          <h2><span class="sec-num">16</span> Limitation of Liability</h2>
-          <p>To the maximum extent permitted by law, Quickbee shall not be liable for loss of profits, loss of opportunity, loss of data, market losses, investment losses, indirect or consequential damages, delays caused by banks or third parties, system downtime, cyber attacks, unauthorized access, or force majeure events.</p>
-          <p>Quickbee's aggregate liability shall not exceed the amount involved in the disputed transaction or INR 5,000, whichever is lower.</p>
+          <h2><span class="sec-num">16</span> Disclaimers</h2>
+          <p>16.1 Digital gold prices are subject to market fluctuations and may increase or decrease over time.</p>
+          <p>16.2 Past performance does not guarantee future returns.</p>
+          <p>16.3 QuickBee does not provide financial, investment, legal, or tax advice.</p>
+          <p>16.4 Services are provided on an "as is" and "as available" basis.</p>
+          <p>16.5 QuickBee does not guarantee uninterrupted, error-free, or fully secure services.</p>
         </div>
 
         <!-- 17 -->
         <div class="terms-section" id="s17">
-          <h2><span class="sec-num">17</span> Disclaimers</h2>
-          <p>17.1 Investment in digital gold is subject to market risks. Past performance does not guarantee future returns.</p>
-          <p>17.2 Quickbee does not provide investment, tax, legal, or financial advice. Users are advised to independently assess risks before investing.</p>
-          <p>17.3 The Platform and services are provided on an "as is" and "as available" basis. Quickbee does not guarantee uninterrupted, error-free, or completely secure services.</p>
+          <h2><span class="sec-num">17</span> Force Majeure</h2>
+          <p>QuickBee shall not be liable for delays or failures caused by events beyond reasonable control including natural disasters, cyber attacks, government restrictions, regulatory actions, banking outages, internet failures, pandemics, power failures, war, or labor disputes.</p>
         </div>
 
         <!-- 18 -->
         <div class="terms-section" id="s18">
-          <h2><span class="sec-num">18</span> Force Majeure</h2>
-          <p>Quickbee shall not be liable for failure or delay caused by events beyond reasonable control including natural disasters, war, cyber attacks, government actions, regulatory restrictions, banking outages, internet failures, power failures, pandemic events, or strikes or labor disruptions.</p>
+          <h2><span class="sec-num">18</span> Account Suspension &amp; Termination</h2>
+          <p>QuickBee reserves the right to suspend, restrict, freeze, or terminate accounts without prior notice if fraudulent activity is suspected, KYC verification fails, duplicate accounts are detected, chargeback abuse occurs, legal or compliance violations arise, or these Terms are violated. QuickBee may additionally freeze balances or redemptions pending investigation.</p>
         </div>
 
         <!-- 19 -->
         <div class="terms-section" id="s19">
-          <h2><span class="sec-num">19</span> Account Suspension &amp; Termination</h2>
-          <p>Quickbee reserves the right to suspend, restrict, or terminate accounts without prior notice if fraudulent activity is suspected, legal or regulatory violations occur, false information is provided, payment abuse or chargebacks occur, or these Terms are violated. Quickbee may also freeze balances or holdings pending investigation.</p>
+          <h2><span class="sec-num">19</span> Privacy &amp; Communications</h2>
+          <p>19.1 User information shall be processed in accordance with the QuickBee Privacy Policy.</p>
+          <p>19.2 Users consent to receive OTPs, transaction alerts, emails, calls, WhatsApp messages, push notifications, promotional messages, and service communications.</p>
+          <p>19.3 Users may opt out of promotional communications where permitted.</p>
         </div>
 
         <!-- 20 -->
         <div class="terms-section" id="s20">
-          <h2><span class="sec-num">20</span> Privacy</h2>
-          <p>User data shall be processed in accordance with the Quickbee Privacy Policy. By using the Platform, users consent to collection, storage, sharing, and processing of information for operational, compliance, fraud prevention, analytics, and service improvement purposes.</p>
+          <h2><span class="sec-num">20</span> Governing Law &amp; Jurisdiction</h2>
+          <p>These Terms shall be governed by the laws of India. Any disputes arising from the use of the Platform shall be subject to the exclusive jurisdiction of courts located in Ernakulam, Kerala.</p>
         </div>
 
         <!-- 21 -->
         <div class="terms-section" id="s21">
-          <h2><span class="sec-num">21</span> Communications</h2>
-          <p>Users consent to receive transaction alerts, OTPs, promotional messages, service notifications, emails, calls, WhatsApp messages, and push notifications. Users may opt out of promotional communications where permitted.</p>
+          <h2><span class="sec-num">21</span> Dispute Resolution</h2>
+          <p>21.1 Users agree to first contact QuickBee support for resolution of complaints or disputes.</p>
+          <p>21.2 QuickBee may attempt dispute resolution through internal grievance mechanisms.</p>
+          <p>21.3 If unresolved, disputes may be referred to arbitration in accordance with applicable laws.</p>
+          <p>21.4 Arbitration proceedings shall be conducted in English.</p>
         </div>
 
         <!-- 22 -->
         <div class="terms-section" id="s22">
-          <h2><span class="sec-num">22</span> Governing Law &amp; Jurisdiction</h2>
-          <p>These Terms shall be governed by the laws of India. Any disputes arising from the use of the Platform shall be subject to the exclusive jurisdiction of courts located in [Insert City, State].</p>
+          <h2><span class="sec-num">22</span> Modification of Terms</h2>
+          <p>QuickBee reserves the right to modify these Terms at any time. Updated Terms shall become effective upon publication on the Platform unless otherwise stated. Continued use of the Platform constitutes acceptance of revised Terms.</p>
         </div>
 
         <!-- 23 -->
         <div class="terms-section" id="s23">
-          <h2><span class="sec-num">23</span> Dispute Resolution</h2>
-          <p>23.1 Users agree to first contact Quickbee support for resolution of disputes.</p>
-          <p>23.2 Quickbee may attempt resolution through internal grievance mechanisms.</p>
-          <p>23.3 If unresolved, disputes may be referred to arbitration in accordance with applicable laws. Arbitration proceedings shall be conducted in English.</p>
+          <h2><span class="sec-num">23</span> Severability</h2>
+          <p>If any provision of these Terms is held invalid or unenforceable, the remaining provisions shall remain valid and enforceable.</p>
         </div>
 
         <!-- 24 -->
         <div class="terms-section" id="s24">
-          <h2><span class="sec-num">24</span> Modification of Terms</h2>
-          <p>Quickbee reserves the right to modify these Terms at any time. Updated Terms may be published on the Platform and shall become effective immediately unless otherwise stated. Continued use of the Platform constitutes acceptance of revised Terms.</p>
+          <h2><span class="sec-num">24</span> Entire Agreement</h2>
+          <p>These Terms constitute the complete agreement between the customer and QuickBee regarding use of the Platform and supersede prior understandings or agreements.</p>
         </div>
 
         <!-- 25 -->
         <div class="terms-section" id="s25">
-          <h2><span class="sec-num">25</span> Severability</h2>
-          <p>If any provision of these Terms is held invalid or unenforceable, the remaining provisions shall remain valid and enforceable.</p>
-        </div>
-
-        <!-- 26 -->
-        <div class="terms-section" id="s26">
-          <h2><span class="sec-num">26</span> Entire Agreement</h2>
-          <p>These Terms constitute the entire agreement between the user and Quickbee regarding use of the Platform and supersede prior agreements or understandings.</p>
-        </div>
-
-        <!-- 27 -->
-        <div class="terms-section" id="s27">
-          <h2><span class="sec-num">27</span> Contact &amp; Grievance Officer</h2>
-          <p>For support, complaints, disputes, or grievances, users may contact:</p>
+          <h2><span class="sec-num">25</span> Customer Support &amp; Grievance Officer</h2>
+          <p>For complaints, support requests, or grievances, users may contact:</p>
           <div class="contact-card">
-            <p><strong style="color:rgba(255,255,255,0.85)">Quickbee Support Team</strong></p>
-            <p>Email: <a href="mailto:hello@quickbee.in">hello@quickbee.in</a></p>
-            <p>Phone: +91 80868 01662 / +91 93232 70902</p>
-            <p>Address: KC Arcade, Near TV Centre, CSEZ, Ernakulam, Kerala 682037, India</p>
-            <p style="margin-top:1rem !important"><strong style="color:rgba(255,255,255,0.85)">Grievance Officer</strong></p>
-            <p>Name: [Insert Name]</p>
-            <p>Email: [Insert Email]</p>
+            <p><strong style="color:rgba(255,255,255,0.9)">QuickBee Support Team</strong></p>
+            <p>Email: <a href="mailto:solutions@QuickBeetech.com">solutions@QuickBeetech.com</a></p>
+            <p>Phone: <a href="tel:+918086801662">+91 80868 01662</a></p>
+            <p>Address: Suite No. 931, 2nd Floor, KC Arcade, Kakkanad, Ernakulam</p>
           </div>
         </div>
 
         <!-- Risk Disclosure -->
         <div class="risk-box">
           <h3>⚠ Important Risk Disclosure</h3>
-          <p>Digital gold prices fluctuate based on market conditions. Investments may be subject to volatility and liquidity constraints. Users are advised to read all terms carefully and make informed financial decisions.</p>
+          <p>Digital gold prices fluctuate based on market conditions and may rise or fall over time. Customers are advised to carefully understand all charges, redemption conditions, risks, fees, and partner policies before subscribing to the scheme.</p>
         </div>
 
         <!-- Acceptance Bar -->
         <div class="acceptance-bar">
-          <strong>By using Quickbee, you acknowledge that you have read, understood, and agreed to these Terms &amp; Conditions.</strong>
+          <strong>By using QuickBee, you acknowledge that you have read, understood, and agreed to these Terms &amp; Conditions.</strong>
         </div>
 
       </main>
     </div><!-- /terms-layout -->
-
   </div><!-- /container -->
 </div><!-- /terms-body -->
 
@@ -562,10 +531,10 @@
 <footer class="footer">
   <div class="container footer-grid">
     <div class="footer-brand">
-       <a href="index.html" class="nav-logo">
-  <img src="logo.png" alt="Quickbee" class="nav-logo-img">
-</a>
-      <p>Quickbee Technology Ventures Pvt Ltd</p>
+      <a href="index.html" class="nav-logo">
+        <img src="logo.png" alt="QuickBee" class="nav-logo-img">
+      </a>
+      <p>QuickBee Technology Ventures Pvt Ltd</p>
       <p style="margin-top:0.5rem; font-size:0.8rem; opacity:0.5">Redefining Gold Savings for the Digital Age</p>
       <div class="footer-social">
         <a href="" target="_blank" rel="noopener" aria-label="Instagram">
@@ -580,7 +549,6 @@
         <a href="" target="_blank" rel="noopener" aria-label="LinkedIn">
           <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
         </a>
-       
       </div>
     </div>
     <div class="footer-links">
@@ -588,8 +556,8 @@
       <a href="index.html">Home</a>
       <a href="about.html">About Us</a>
       <a href="services.html">Services</a>
+	  <a href="faq.html">FAQ</a>
       <a href="terms.html">Terms &amp; Conditions</a>
-      <!-- <a href="team.html">Team</a> -->
     </div>
     <div class="footer-links">
       <h4>Services</h4>
@@ -600,20 +568,218 @@
     </div>
     <div class="footer-contact">
       <h4>Get In Touch</h4>
-	        <p style="margin-top:1rem; font-size:0.85rem; opacity:0.6">KC Arcade, Near TV centre, CSEZ
-Ernakulam, Kerala, 682037
-India
-</p>
-<p style="margin-top:1rem; font-size:0.85rem; opacity:0.6">Phone:+918086801662, <br>
-        +919323270902
-
-</p>
-      <a href="mailto:hello@quickbee.in">hello@quickbee.in</a>
-      <p style="margin-top:1rem; font-size:0.85rem; opacity:0.6">©2026 Quickbee Technology Ventures Pvt Ltd. All rights reserved.</p>
+      <p style="margin-top:1rem; font-size:0.85rem; opacity:0.6; line-height:1.7;">
+        KC Arcade, Near TV centre, CSEZ<br>
+        Ernakulam, Kerala, 682037<br>
+        India
+      </p>
+      <p style="margin-top:0.75rem; font-size:0.85rem; opacity:0.6; line-height:2;">
+        <a href="tel:+918086801662" style="color:inherit; text-decoration:none; display:flex; align-items:center; gap:0.4rem;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l1.9-1.9a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +91 80868 01662
+        </a>
+        <a href="tel:+919323270902" style="color:inherit; text-decoration:none; display:flex; align-items:center; gap:0.4rem; padding-left:1.4rem;">
+          +91 93232 70902
+        </a>
+      </p>
+      <p style="margin-top:0.5rem; font-size:0.85rem;">
+        <a href="mailto:hello@quickbee.in" style="display:flex; align-items:center; gap:0.4rem;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          hello@quickbee.in
+        </a>
+      </p>
     </div>
+  </div>
+  <div class="footer-bottom">
+    ©2026 QuickBee Technology Ventures Pvt Ltd. All rights reserved.
   </div>
 </footer>
 
 <script src="main.js"></script>
+
+<!-- Partner Modal -->
+<div id="partnerModal" class="pm-overlay" role="dialog" aria-modal="true" aria-labelledby="pmTitle">
+  <div class="pm-backdrop" id="pmBackdrop"></div>
+  <div class="pm-modal">
+    <div class="pm-bar"></div>
+    <button class="pm-close" id="pmClose" aria-label="Close">✕</button>
+    <div class="pm-header">
+      <div class="pm-icon">🤝</div>
+      <div>
+        <h2 id="pmTitle">Partner With Us</h2>
+        <p>Join the QuickBee ecosystem — let's grow together</p>
+      </div>
+    </div>
+    <form id="partnerForm" enctype="multipart/form-data" novalidate>
+      <div class="pm-row">
+        <div class="pm-field">
+          <label for="pmName">Full Name <span class="req">*</span></label>
+          <input type="text" id="pmName" name="name" placeholder="Your full name" autocomplete="name" />
+          <span class="pm-err" id="errName"></span>
+        </div>
+        <div class="pm-field">
+          <label for="pmOrg">Organization <span class="req">*</span></label>
+          <input type="text" id="pmOrg" name="org" placeholder="Company / shop name" />
+          <span class="pm-err" id="errOrg"></span>
+        </div>
+      </div>
+      <div class="pm-row">
+        <div class="pm-field">
+          <label for="pmEmail">Email Address <span class="req">*</span></label>
+          <input type="email" id="pmEmail" name="email" placeholder="you@example.com" autocomplete="email" />
+          <span class="pm-err" id="errEmail"></span>
+        </div>
+        <div class="pm-field">
+          <label for="pmPhone">Phone Number <span class="req">*</span></label>
+          <input type="tel" id="pmPhone" name="phone" placeholder="+91 98765 43210" autocomplete="tel" />
+          <span class="pm-err" id="errPhone"></span>
+        </div>
+      </div>
+      <div class="pm-field">
+        <label for="pmType">Type of Partnership <span class="req">*</span></label>
+        <div class="pm-select-wrap">
+          <select id="pmType" name="type">
+            <option value="">— Select a partnership type —</option>
+            <option value="Jeweller Partner">Jeweller Partner</option>
+            <option value="Distribution Partner">Distribution Partner</option>
+            <option value="Lending Partner">Lending Partner</option>
+            <option value="Technology Partner">Technology Partner</option>
+            <option value="Other">Other</option>
+          </select>
+          <span class="pm-arrow">▾</span>
+        </div>
+        <span class="pm-err" id="errType"></span>
+      </div>
+      <div class="pm-field">
+        <label>Upload Document <span class="pm-opt">(optional · PDF / JPG / PNG · max 5 MB)</span></label>
+        <label class="pm-upload" id="pmUploadLabel" for="pmDoc">
+          <span>📎</span>
+          <span id="pmFileName">Click to choose file or drag &amp; drop</span>
+          <input type="file" id="pmDoc" name="document" accept=".pdf,.jpg,.jpeg,.png" />
+        </label>
+        <span class="pm-err" id="errDoc"></span>
+      </div>
+      <div class="pm-field">
+        <label for="pmMsg">Message <span class="req">*</span></label>
+        <textarea id="pmMsg" name="message" rows="4" placeholder="Tell us about yourself and how you'd like to partner with QuickBee…"></textarea>
+        <div class="pm-char-row">
+          <span class="pm-err" id="errMsg"></span>
+          <span id="pmCharCount" class="pm-count">0 / 1000</span>
+        </div>
+      </div>
+      <button type="submit" class="pm-submit" id="pmSubmit">
+        <span id="pmBtnText">Send Partnership Request</span>
+        <span id="pmSpinner" class="pm-spinner" style="display:none;"></span>
+      </button>
+    </form>
+    <div class="pm-success" id="pmSuccess" style="display:none;">
+      <div class="pm-tick">✓</div>
+      <h3>Request Sent!</h3>
+      <p>Thank you for reaching out. Our team will get back to you within <strong>1–2 business days</strong>.</p>
+      <button class="pm-submit" onclick="closePartnerModal()">Close</button>
+    </div>
+    <div class="pm-server-err" id="pmServerErr" style="display:none;"></div>
+  </div>
+</div>
+
+<style>
+.pm-overlay{display:none;position:fixed;inset:0;z-index:9000;align-items:center;justify-content:center;padding:1rem;}
+.pm-overlay.active{display:flex;}
+.pm-backdrop{position:absolute;inset:0;background:rgba(30,8,8,.75);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);animation:pmFade .25s ease;}
+.pm-modal{position:relative;background:#fff;border-radius:20px;width:100%;max-width:620px;max-height:92vh;overflow-y:auto;box-shadow:0 40px 90px rgba(30,8,8,.4),0 0 0 1px rgba(139,26,60,.1);animation:pmUp .35s cubic-bezier(.22,.61,.36,1);scrollbar-width:thin;scrollbar-color:rgba(139,26,60,.2) transparent;}
+.pm-modal::-webkit-scrollbar{width:4px;}.pm-modal::-webkit-scrollbar-thumb{background:rgba(139,26,60,.2);border-radius:4px;}
+.pm-bar{position:sticky;top:0;height:4px;background:linear-gradient(90deg,#8B1A3C,#D4920E,#FFD87A);border-radius:20px 20px 0 0;z-index:2;}
+.pm-close{position:absolute;top:1rem;right:1rem;z-index:10;background:rgba(139,26,60,.07);border:none;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:.8rem;color:#7A3D50;transition:background .2s,color .2s;}
+.pm-close:hover{background:rgba(139,26,60,.16);color:#8B1A3C;}
+.pm-header{display:flex;align-items:center;gap:1rem;padding:1.75rem 2rem 1.25rem;}
+.pm-icon{width:52px;height:52px;background:linear-gradient(135deg,rgba(139,26,60,.09),rgba(212,146,14,.1));border-radius:14px;border:1.5px solid rgba(139,26,60,.12);display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0;}
+.pm-header h2{font-family:'Sora',sans-serif;font-size:1.4rem;font-weight:700;color:#3D0718;margin:0 0 .2rem;letter-spacing:-.02em;}
+.pm-header p{font-size:.84rem;color:#7A3D50;margin:0;font-weight:500;}
+#partnerForm{padding:0 2rem 2rem;}
+.pm-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.pm-field{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1rem;}
+.pm-field label{font-size:.75rem;font-weight:700;color:#4A1525;letter-spacing:.05em;text-transform:uppercase;}
+.req{color:#8B1A3C;}.pm-opt{text-transform:none;font-weight:500;color:#AA7080;letter-spacing:0;}
+.pm-field input,.pm-field textarea,.pm-field select{font-family:inherit;font-size:.9rem;font-weight:500;color:#1E0808;background:#FFFAF5;border:1.5px solid rgba(139,26,60,.15);border-radius:10px;padding:.7rem .9rem;outline:none;transition:border-color .2s,box-shadow .2s;width:100%;box-sizing:border-box;}
+.pm-field input::placeholder,.pm-field textarea::placeholder{color:#AA7080;}
+.pm-field input:focus,.pm-field textarea:focus,.pm-field select:focus{border-color:#8B1A3C;box-shadow:0 0 0 3px rgba(139,26,60,.1);background:#fff;}
+.pm-field input.err,.pm-field textarea.err,.pm-field select.err{border-color:#e53935;box-shadow:0 0 0 3px rgba(229,57,53,.1);}
+.pm-field textarea{resize:vertical;min-height:100px;}
+.pm-select-wrap{position:relative;}
+.pm-select-wrap select{appearance:none;padding-right:2.5rem;cursor:pointer;}
+.pm-arrow{position:absolute;right:.9rem;top:50%;transform:translateY(-50%);color:#8B1A3C;font-size:.85rem;pointer-events:none;}
+.pm-upload{display:flex;align-items:center;gap:.75rem;background:#FFFAF5;border:1.5px dashed rgba(139,26,60,.25);border-radius:10px;padding:.75rem 1rem;cursor:pointer;transition:border-color .2s,background .2s;font-size:.88rem;color:#7A3D50;font-weight:500;}
+.pm-upload:hover{border-color:#8B1A3C;background:#fff;}
+.pm-upload input{display:none;}
+#pmFileName{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.pm-char-row{display:flex;justify-content:space-between;align-items:flex-start;min-height:1.1rem;}
+.pm-count{font-size:.72rem;color:#AA7080;white-space:nowrap;margin-left:auto;}
+.pm-err{font-size:.74rem;color:#e53935;font-weight:600;min-height:1rem;display:block;}
+.pm-submit{width:100%;background:linear-gradient(135deg,#8B1A3C,#A82B50);color:#fff;border:none;border-radius:50px;padding:1rem;font-family:inherit;font-size:.95rem;font-weight:800;letter-spacing:.03em;cursor:pointer;transition:all .25s;box-shadow:0 6px 22px rgba(139,26,60,.32);display:flex;align-items:center;justify-content:center;gap:.5rem;margin-top:.5rem;}
+.pm-submit:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 12px 32px rgba(139,26,60,.42);}
+.pm-submit:disabled{opacity:.65;cursor:not-allowed;}
+.pm-spinner{width:18px;height:18px;border:2.5px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;}
+.pm-success{padding:2.5rem 2rem;text-align:center;}
+.pm-tick{width:64px;height:64px;background:linear-gradient(135deg,#8B1A3C,#D4920E);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.8rem;color:#fff;margin:0 auto 1.25rem;box-shadow:0 8px 24px rgba(139,26,60,.35);}
+.pm-success h3{font-family:'Sora',sans-serif;font-size:1.5rem;color:#3D0718;font-weight:700;margin-bottom:.75rem;}
+.pm-success p{font-size:.92rem;color:#7A3D50;line-height:1.7;margin-bottom:1.75rem;}
+.pm-server-err{margin:0 2rem 1.5rem;background:rgba(229,57,53,.07);border:1px solid rgba(229,57,53,.25);border-radius:8px;padding:.75rem 1rem;font-size:.84rem;color:#c62828;font-weight:600;}
+@keyframes pmFade{from{opacity:0}to{opacity:1}}
+@keyframes pmUp{from{opacity:0;transform:translateY(40px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media(max-width:600px){
+  .pm-overlay{align-items:flex-end;padding:0;}
+  .pm-modal{border-radius:16px 16px 0 0;max-height:95vh;}
+  .pm-row{grid-template-columns:1fr;}
+  .pm-header{padding:1.25rem 1.25rem 1rem;}
+  #partnerForm{padding:0 1.25rem 1.5rem;}
+  .pm-success{padding:2rem 1.25rem;}
+  .pm-server-err{margin:0 1.25rem 1.25rem;}
+}
+</style>
+
+<script>
+(function(){
+  const modal=document.getElementById('partnerModal'),form=document.getElementById('partnerForm'),backdrop=document.getElementById('pmBackdrop'),closeBtn=document.getElementById('pmClose'),fileInput=document.getElementById('pmDoc'),fileName=document.getElementById('pmFileName'),msgArea=document.getElementById('pmMsg'),charCount=document.getElementById('pmCharCount'),btnText=document.getElementById('pmBtnText'),spinner=document.getElementById('pmSpinner'),submitBtn=document.getElementById('pmSubmit'),success=document.getElementById('pmSuccess'),serverErr=document.getElementById('pmServerErr');
+  function openPartnerModal(e){if(e)e.preventDefault();modal.classList.add('active');document.body.style.overflow='hidden';form.style.display='';success.style.display='none';serverErr.style.display='none';form.reset();fileName.textContent='Click to choose file or drag & drop';charCount.textContent='0 / 1000';clearAll();}
+  window.openPartnerModal=openPartnerModal;
+  function closePartnerModal(){modal.classList.remove('active');document.body.style.overflow='';}
+  window.closePartnerModal=closePartnerModal;
+  document.querySelectorAll('a.nav-cta, a[href="#contact"]').forEach(el=>{el.addEventListener('click',openPartnerModal);});
+  backdrop.addEventListener('click',closePartnerModal);
+  closeBtn.addEventListener('click',closePartnerModal);
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('active'))closePartnerModal();});
+  msgArea.addEventListener('input',()=>{const n=msgArea.value.length;charCount.textContent=n+' / 1000';charCount.style.color=n>900?'#e53935':'#AA7080';});
+  fileInput.addEventListener('change',()=>{const f=fileInput.files[0];if(!f){fileName.textContent='Click to choose file or drag & drop';return;}if(f.size>5*1024*1024){showErr('errDoc','File must be under 5 MB');fileInput.value='';fileName.textContent='Click to choose file or drag & drop';return;}clearErr('errDoc');fileName.textContent=f.name;});
+  const uploadLabel=document.getElementById('pmUploadLabel');
+  uploadLabel.addEventListener('dragover',e=>{e.preventDefault();uploadLabel.style.borderColor='#8B1A3C';});
+  uploadLabel.addEventListener('dragleave',()=>{uploadLabel.style.borderColor='';});
+  uploadLabel.addEventListener('drop',e=>{e.preventDefault();uploadLabel.style.borderColor='';if(e.dataTransfer.files[0]){fileInput.files=e.dataTransfer.files;fileInput.dispatchEvent(new Event('change'));}});
+  function showErr(id,msg){const el=document.getElementById(id);if(!el)return;el.textContent=msg;el.closest('.pm-field')?.querySelector('input,select,textarea')?.classList.add('err');}
+  function clearErr(id){const el=document.getElementById(id);if(!el)return;el.textContent='';el.closest('.pm-field')?.querySelector('input,select,textarea')?.classList.remove('err');}
+  function clearAll(){['errName','errOrg','errEmail','errPhone','errType','errDoc','errMsg'].forEach(clearErr);}
+  [{id:'pmName',err:'errName'},{id:'pmOrg',err:'errOrg'},{id:'pmEmail',err:'errEmail'},{id:'pmPhone',err:'errPhone'},{id:'pmType',err:'errType'},{id:'pmMsg',err:'errMsg'}].forEach(({id,err})=>{document.getElementById(id)?.addEventListener('input',()=>clearErr(err));});
+  function validate(){clearAll();let ok=true;const v=id=>document.getElementById(id).value.trim();if(v('pmName').length<2){showErr('errName','Please enter your full name');ok=false;}if(v('pmOrg').length<2){showErr('errOrg','Please enter your organization');ok=false;}if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v('pmEmail'))){showErr('errEmail','Please enter a valid email address');ok=false;}if(!/^[+\d\s\-()\[\]]{7,20}$/.test(v('pmPhone'))){showErr('errPhone','Please enter a valid phone number');ok=false;}if(!v('pmType')){showErr('errType','Please select a partnership type');ok=false;}if(v('pmMsg').length<20){showErr('errMsg','Please write at least 20 characters');ok=false;}if(v('pmMsg').length>1000){showErr('errMsg','Message must be under 1000 characters');ok=false;}return ok;}
+  form.addEventListener('submit',async function(e){e.preventDefault();if(!validate())return;btnText.style.display='none';spinner.style.display='';submitBtn.disabled=true;serverErr.style.display='none';try{const res=await fetch('send_partner.php',{method:'POST',body:new FormData(form)});const json=await res.json();if(json.success){form.style.display='none';success.style.display='';}else{const msg=json.errors?json.errors.join('<br>'):(json.error||'Something went wrong. Please try again.');serverErr.innerHTML='⚠️ '+msg;serverErr.style.display='';}}catch(err){serverErr.textContent='⚠️ Network error — please check your connection and try again.';serverErr.style.display='';}finally{btnText.style.display='';spinner.style.display='none';submitBtn.disabled=false;}});
+})();
+</script>
+
+<!-- TOC active link on scroll -->
+<script>
+(function(){
+  const links = document.querySelectorAll('.terms-toc a');
+  const sections = document.querySelectorAll('.terms-section[id]');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 130) current = s.id;
+    });
+    links.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  }, { passive: true });
+})();
+</script>
+
 </body>
 </html>

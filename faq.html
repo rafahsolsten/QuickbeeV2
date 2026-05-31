@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ — Quickbee</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+  <style>
+    .faq-body {
+      background: var(--maroon-deep, #1a0a0a);
+      padding: 5rem 0 6rem;
+    }
+    .faq-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    /* Sticky sidebar TOC */
+    .faq-toc {
+      position: sticky;
+      top: 100px;
+    }
+    .faq-toc h3 {
+      font-family: 'Sora', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold, #D4920E);
+      margin-bottom: 1.25rem;
+    }
+    .faq-toc ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      border-left: 1px solid rgba(212,146,14,0.2);
+    }
+    .faq-toc ul li a {
+      display: block;
+      padding: 0.45rem 0 0.45rem 1.1rem;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.70);
+      text-decoration: none;
+      transition: color 0.2s, border-color 0.2s;
+      border-left: 2px solid transparent;
+      margin-left: -1px;
+      line-height: 1.4;
+    }
+    .faq-toc ul li a:hover,
+    .faq-toc ul li a.active {
+      color: var(--gold, #D4920E);
+      border-left-color: var(--gold, #D4920E);
+    }
+
+    /* Category headings */
+    .faq-category {
+      margin-bottom: 2.5rem;
+      scroll-margin-top: 110px;
+    }
+    .faq-category h2 {
+      font-family: 'Sora', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid rgba(212,146,14,0.15);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .faq-category h2 .cat-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background: rgba(212,146,14,0.12);
+      border: 1px solid rgba(212,146,14,0.25);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      flex-shrink: 0;
+    }
+
+    /* Accordion items */
+    .faq-item {
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 10px;
+      margin-bottom: 0.6rem;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .faq-item.open {
+      border-color: rgba(212,146,14,0.3);
+    }
+    .faq-q {
+      width: 100%;
+      background: rgba(255,255,255,0.03);
+      border: none;
+      text-align: left;
+      padding: 1rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .faq-q:hover {
+      background: rgba(255,255,255,0.055);
+    }
+    .faq-item.open .faq-q {
+      background: rgba(212,146,14,0.06);
+    }
+    .faq-q-text {
+      font-family: 'Sora', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.92);
+      line-height: 1.5;
+    }
+    .faq-chevron {
+      width: 22px;
+      height: 22px;
+      background: rgba(212,146,14,0.1);
+      border: 1px solid rgba(212,146,14,0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: transform 0.3s, background 0.2s;
+      color: var(--gold, #D4920E);
+      font-size: 0.65rem;
+    }
+    .faq-item.open .faq-chevron {
+      transform: rotate(180deg);
+      background: rgba(212,146,14,0.18);
+    }
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.25s ease;
+    }
+    .faq-item.open .faq-a {
+      max-height: 600px;
+    }
+    .faq-a-inner {
+      padding: 0 1.25rem 1.1rem;
+      font-size: 0.9rem;
+      line-height: 1.85;
+      color: rgba(255,255,255,0.80);
+    }
+    .faq-a-inner ul {
+      list-style: none;
+      padding: 0;
+      margin: 0.5rem 0 0;
+    }
+    .faq-a-inner ul li {
+      padding: 0.25rem 0 0.25rem 1.3rem;
+      position: relative;
+      color: rgba(255,255,255,0.72);
+      font-size: 0.88rem;
+      line-height: 1.7;
+    }
+    .faq-a-inner ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.65rem;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--gold, #D4920E);
+      opacity: 0.6;
+    }
+
+    /* Risk box */
+    .risk-box {
+      background: rgba(212,146,14,0.06);
+      border: 1px solid rgba(212,146,14,0.25);
+      border-radius: 12px;
+      padding: 1.5rem 1.75rem;
+      margin-top: 3rem;
+    }
+    .risk-box h3 {
+      font-family: 'Sora', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold, #D4920E);
+      margin-bottom: 0.75rem;
+    }
+    .risk-box p {
+      font-size: 0.88rem;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.80);
+      margin: 0;
+    }
+
+    @media (max-width: 900px) {
+      .faq-layout { grid-template-columns: 1fr; gap: 2rem; }
+      .faq-toc { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav-logo">
+    <img src="logo.png" alt="Quickbee" class="nav-logo-img">
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="#contact" class="nav-cta">Partner With Us</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg">
+    <div class="gold-orb orb1"></div>
+    <div class="gold-orb orb2"></div>
+  </div>
+  <div class="container page-hero-content">
+    <span class="section-label">Support</span>
+    <h1>Frequently Asked <em>Questions</em></h1>
+    <p>Everything you need to know about Quickbee — gold savings, payments, redemption, and more.</p>
+  </div>
+</section>
+
+<!-- FAQ BODY -->
+<div class="faq-body">
+  <div class="container">
+    <div class="faq-layout">
+
+      <!-- SIDEBAR TOC -->
+      <aside class="faq-toc">
+        <h3>Categories</h3>
+        <ul>
+          <li><a href="#general">General</a></li>
+          <li><a href="#account">Account & Registration</a></li>
+          <li><a href="#payments">Monthly Payments</a></li>
+          <li><a href="#gold">Digital Gold & Pricing</a></li>
+          <li><a href="#redemption">Redemption & Maturity</a></li>
+          <li><a href="#nominee">Nominee & Death Claims</a></li>
+          <li><a href="#kyc">KYC, PAN & Compliance</a></li>
+          <li><a href="#rewards">Rewards & Promotions</a></li>
+          <li><a href="#security">Security & Fraud</a></li>
+          <li><a href="#taxes">Taxes & Charges</a></li>
+          <li><a href="#legal">Legal & Liability</a></li>
+          <li><a href="#support">Customer Support</a></li>
+        </ul>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <main>
+
+        <!-- GENERAL -->
+        <div class="faq-category" id="general">
+          <h2><span class="cat-icon">⭐</span> General</h2>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">What is Quickbee?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">Quickbee is a digital gold savings and rewards platform that allows users to save monthly towards jewellery purchases or cash redemption through an 11-month digital gold savings scheme.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">How does the Quickbee scheme work?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">Customers can subscribe to an 11-month digital gold savings plan by making monthly payments through the Quickbee app or website. After completion of the scheme tenure, the accumulated value can be redeemed either for jewellery from the respective jewellery partner or through cash redemption.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">Is Quickbee safe to use?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">Quickbee uses secure payment gateways, OTP verification, encryption technologies, fraud monitoring systems, and partnered financial service providers to ensure secure transactions and account safety.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">Is digital gold real gold?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">Yes. Digital gold purchased through Quickbee is backed by physical gold stored securely with authorized custodians or vaulting partners.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">What is the duration of the Quickbee digital gold scheme?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">The Quickbee digital gold monthly investment plan is an 11-month savings scheme, similar to jewellery savings schemes offered by jewellery retailers.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">Is there a minimum amount required to start?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">Yes. The minimum monthly investment amount may vary depending on the selected scheme or partner requirements.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">Can I use Quickbee anywhere in India?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">Quickbee services are available in most parts of India subject to operational, legal, and partner availability.</div></div>
+          </div>
+        </div>
+
+        <!-- ACCOUNT -->
+        <div class="faq-category" id="account">
+          <h2><span class="cat-icon">👤</span> Account & Registration</h2>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">How do I create a Quickbee account?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">You can create an account using your mobile number, OTP verification, and other required information through the Quickbee app or website.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">Can I create multiple Quickbee accounts?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">No. Only one Quickbee account is permitted per registered mobile number.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">Can I change my registered mobile number?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">Yes, subject to verification and security checks.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">Why is my account temporarily blocked?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">Accounts may be blocked due to:
+              <ul>
+                <li>Multiple failed login attempts</li>
+                <li>Suspicious activity</li>
+                <li>KYC issues</li>
+                <li>Payment disputes</li>
+                <li>Fraud prevention checks</li>
+                <li>Duplicate account detection</li>
+              </ul>
+            </div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">Can I use someone else's bank account or payment method?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">No. Customers must use payment methods and bank accounts registered in their own name.</div></div>
+          </div>
+        </div>
+
+        <!-- PAYMENTS -->
+        <div class="faq-category" id="payments">
+          <h2><span class="cat-icon">💳</span> Monthly Investment & Payments</h2>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">How do I pay my monthly installment?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">Customers may make payments using any payment method made available by the authorized payment partner, including:
+              <ul>
+                <li>UPI</li>
+                <li>Debit cards</li>
+                <li>Credit cards</li>
+                <li>Net banking</li>
+                <li>Wallets</li>
+                <li>QR code payments</li>
+              </ul>
+              Available methods may vary depending on banking networks, payment partner availability, or operational limitations.
+            </div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">Can I enable auto-debit for monthly payments?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">Yes. Customers may enable auto-debit or recurring payment mandates where available.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">What happens if my monthly payment fails?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">Payments may fail due to:
+              <ul>
+                <li>Insufficient bank balance</li>
+                <li>Bank server downtime</li>
+                <li>UPI issues</li>
+                <li>Expired cards</li>
+                <li>Technical failures</li>
+                <li>Mandate failures</li>
+              </ul>
+            </div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">My bank account was debited but my gold balance was not updated. What should I do?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">Please wait for the standard reconciliation period. Most failed transactions are automatically reversed by the bank. If the issue continues, contact Quickbee support with your transaction reference number.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">How long do refunds take for failed transactions?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">Refunds or reversals usually take between 3 to 15 business days depending on the bank or payment provider.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">Can I cancel a completed payment?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">Completed and successfully processed transactions generally cannot be cancelled.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">What happens if auto-debit fails?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">Your installment may fail due to insufficient balance, mandate issues, banking restrictions, or technical problems. Please ensure your account has sufficient funds and your mandate is active.</div></div>
+          </div>
+        </div>
+
+        <!-- GOLD & PRICING -->
+        <div class="faq-category" id="gold">
+          <h2><span class="cat-icon">🥇</span> Digital Gold & Pricing</h2>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">How is the gold price calculated?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">Gold prices are updated dynamically based on live market rates, taxes, partner pricing, and applicable operational charges.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">Can the gold price change during payment?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">Yes. Since gold prices change in real time, the applicable gold rate will be the rate displayed on the platform at the time the transaction is successfully processed.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">Is there a limit on the amount I can invest?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">Investment limits may apply depending on:
+              <ul>
+                <li>Regulatory requirements</li>
+                <li>PAN compliance</li>
+                <li>KYC status</li>
+                <li>Partner limits</li>
+                <li>Payment method restrictions</li>
+              </ul>
+            </div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">Will I receive receipts for my payments?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">Yes. Transaction confirmations and receipts will be available within the app and may also be sent through SMS or email.</div></div>
+          </div>
+        </div>
+
+        <!-- REDEMPTION -->
+        <div class="faq-category" id="redemption">
+          <h2><span class="cat-icon">💍</span> Redemption & Maturity</h2>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">What happens after the 11-month scheme period ends?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">After completion of the scheme tenure, customers must redeem their accumulated value either towards jewellery purchases from the respective jewellery partner, or through cash redemption subject to applicable platform fees and deductions.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">Can I redeem my balance for jewellery?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">Yes. Eligible customers can redeem their scheme balance for jewellery from the associated jewellery partner.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">Can I redeem my balance as cash?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">Yes. Customers may choose cash redemption subject to applicable fees, deductions, taxes, and platform charges.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">Are there any charges for cash redemption?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">Yes. Cash redemption requests may attract:
+              <ul>
+                <li>Platform fees</li>
+                <li>Processing charges</li>
+                <li>Banking charges</li>
+                <li>Taxes</li>
+                <li>Other applicable deductions</li>
+              </ul>
+            </div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">Do I need to visit the jewellery partner personally for jewellery redemption?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">Yes. The same registered customer who subscribed to the scheme must be physically present at the jewellery partner location during redemption.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">What documents are required during jewellery redemption?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">Customers may be required to provide:
+              <ul>
+                <li>Government-issued ID proof</li>
+                <li>OTP verification</li>
+                <li>Registered mobile verification</li>
+                <li>Additional KYC documents if requested</li>
+              </ul>
+            </div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">Can someone else redeem jewellery on my behalf?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">No. Jewellery redemption is allowed only to the registered customer after successful identity verification.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">When can I purchase jewellery after submitting a redemption request?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">When redemption towards jewellery is requested, purchases from the respective jewellery partner can be made only after 48 hours from successful redemption request confirmation. This waiting period is required for verification, settlement processing, and compliance checks.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">What happens if I do not redeem my balance after maturity?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">If redemption is not completed within the applicable redemption period, the amount may be refunded to the original payment source, or the balance may be held in a non-interest-bearing account until disputes or verification processes are resolved.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">Will I receive interest if my balance is held after maturity?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">No. Quickbee does not provide interest, appreciation, or returns on held balances, pending balances, or unredeemed amounts.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">Can I cancel a jewellery redemption request?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">Once a redemption request is processed or confirmed, cancellation may not be possible.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">How long does jewellery delivery take?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">Delivery timelines may vary depending on:
+              <ul>
+                <li>Product availability</li>
+                <li>Location</li>
+                <li>Logistics operations</li>
+                <li>Holidays</li>
+                <li>Verification requirements</li>
+              </ul>
+            </div></div>
+          </div>
+        </div>
+
+        <!-- NOMINEE -->
+        <div class="faq-category" id="nominee">
+          <h2><span class="cat-icon">🤲</span> Nominee & Death Claims</h2>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">Can I add a nominee to my account?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">Yes. Customers may nominate an eligible nominee through the app or permitted account update process.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">What happens if the customer passes away?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">Eligible balances or redemption proceeds may be released to the registered nominee after successful verification and submission of required documents.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">Which documents may be required for nominee claims?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">Documents may include:
+              <ul>
+                <li>Death certificate</li>
+                <li>Identity proof</li>
+                <li>KYC documents</li>
+                <li>Relationship proof</li>
+                <li>Additional compliance documents if required</li>
+              </ul>
+            </div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">Can my nominee redeem the scheme on my behalf?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">Yes. In the event of death of the customer, or inability of the registered customer to be physically present during redemption, the registered nominee may become eligible to act on behalf of the customer after successful KYC verification, document submission, and approval by Quickbee and/or the jewellery partner.</div></div>
+          </div>
+        </div>
+
+        <!-- KYC -->
+        <div class="faq-category" id="kyc">
+          <h2><span class="cat-icon">📋</span> KYC, PAN & Compliance</h2>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">Is KYC mandatory?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">KYC verification may be mandatory for higher transaction limits, redemption requests, withdrawals, or compliance requirements.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">Which documents may be required for KYC?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">Documents may include:
+              <ul>
+                <li>PAN card</li>
+                <li>Aadhaar card</li>
+                <li>Address proof</li>
+                <li>Selfie verification</li>
+                <li>Bank verification</li>
+              </ul>
+            </div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">Is PAN card mandatory?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">PAN card details may become mandatory if the customer's total annual payments or investments exceed INR 2,00,000 in accordance with applicable Income Tax rules.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">What happens if I do not submit PAN details when required?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">Failure to provide PAN details may result in:
+              <ul>
+                <li>Transaction restrictions</li>
+                <li>Redemption delays</li>
+                <li>Withdrawal limitations</li>
+                <li>Temporary account suspension</li>
+              </ul>
+            </div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">Why was my KYC rejected?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">KYC may be rejected due to:
+              <ul>
+                <li>Blurry documents</li>
+                <li>Name mismatch</li>
+                <li>Invalid documents</li>
+                <li>Incomplete information</li>
+                <li>Regulatory restrictions</li>
+              </ul>
+            </div></div>
+          </div>
+        </div>
+
+        <!-- REWARDS -->
+        <div class="faq-category" id="rewards">
+          <h2><span class="cat-icon">🎁</span> Rewards & Promotions</h2>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">Does Quickbee offer rewards or cashback?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">Yes. Quickbee may provide cashback, referral bonuses, promotional gold, or loyalty rewards through eligible campaigns and partner programs.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">Can rewards expire?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">Yes. Promotional rewards, cashback, or coupons may carry expiry dates and usage restrictions.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">What happens if referral abuse or fraud is detected?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">Fraudulent referrals, fake accounts, duplicate accounts, or abuse of promotional systems may result in cancellation of rewards and suspension of accounts.</div></div>
+          </div>
+        </div>
+
+        <!-- SECURITY -->
+        <div class="faq-category" id="security">
+          <h2><span class="cat-icon">🔒</span> Security & Fraud Prevention</h2>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">How does Quickbee protect my account?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">Quickbee uses OTP verification, encryption technologies, fraud monitoring systems, and security checks to protect customer accounts.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">Will Quickbee ask for my OTP or password?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">No. Quickbee will never ask for your OTP, password, PIN, or banking credentials. Never share these with anyone.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">What should I do if I suspect unauthorized activity?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">Immediately contact Quickbee support and secure your banking and mobile access.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">Can Quickbee suspend my account?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">Yes. Accounts may be suspended for fraud prevention, suspicious activity, duplicate accounts, payment disputes, or compliance requirements.</div></div>
+          </div>
+        </div>
+
+        <!-- TAXES -->
+        <div class="faq-category" id="taxes">
+          <h2><span class="cat-icon">🧾</span> Taxes & Charges</h2>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">Are there any hidden charges?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">Applicable taxes, platform fees, processing charges, or redemption deductions will generally be disclosed during the transaction process.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">Is GST applicable?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">Yes. Applicable taxes including GST may apply depending on the transaction type and applicable laws.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">Will I receive transaction history or statements?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">Yes. Customers may access transaction history and statements through the app or website where available.</div></div>
+          </div>
+        </div>
+
+        <!-- LEGAL -->
+        <div class="faq-category" id="legal">
+          <h2><span class="cat-icon">⚖️</span> Legal & Liability</h2>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">Is Quickbee regulated?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">Quickbee works with authorized payment, financial, jewellery, and gold service providers in accordance with applicable laws and industry practices.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">Does Quickbee provide investment advice?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">No. Quickbee does not provide financial, legal, investment, or tax advice.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">What is the maximum liability of Quickbee in case of disputes?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">In any dispute or claim, Quickbee's maximum liability shall be restricted to the amount paid by the customer under the relevant transaction or scheme.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">Can Quickbee modify its services or terms?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">Yes. Features, pricing, rewards, services, and terms may be updated or modified from time to time.</div></div>
+          </div>
+        </div>
+
+        <!-- SUPPORT -->
+        <div class="faq-category" id="support">
+          <h2><span class="cat-icon">💬</span> Customer Support</h2>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">How can I contact Quickbee support?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">You can contact support through:
+              <ul>
+                <li>In-app support</li>
+                <li>Email: <a href="mailto:solutions@quickbeetech.com" style="color:var(--gold,#D4920E);">solutions@quickbeetech.com</a></li>
+                <li>Phone: <a href="tel:+918086801662" style="color:var(--gold,#D4920E);">+91 80868 01662</a></li>
+                <li>Website support form</li>
+                <li>WhatsApp support (where available)</li>
+              </ul>
+            </div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">What details should I provide while reporting an issue?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">Please provide:
+              <ul>
+                <li>Registered mobile number</li>
+                <li>Transaction ID</li>
+                <li>Date and time</li>
+                <li>Payment reference number</li>
+                <li>Screenshot (if available)</li>
+              </ul>
+            </div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q"><span class="faq-q-text">How long does issue resolution take?</span><span class="faq-chevron">▼</span></button>
+            <div class="faq-a"><div class="faq-a-inner">Resolution timelines may vary depending on the nature of the issue, verification requirements, and banking partner processes.</div></div>
+          </div>
+        </div>
+
+        <!-- Risk box -->
+        <div class="risk-box">
+          <h3>⚠ Important Risk Disclosure</h3>
+          <p>Digital gold prices are subject to market fluctuations and may increase or decrease over time. Customers are advised to carefully understand all charges, redemption conditions, risks, taxes, and partner policies before subscribing to the scheme.</p>
+        </div>
+
+      </main>
+    </div><!-- /faq-layout -->
+  </div><!-- /container -->
+</div><!-- /faq-body -->
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo">
+        <img src="logo.png" alt="Quickbee" class="nav-logo-img">
+      </a>
+      <p>Quickbee Technology Ventures Pvt Ltd</p>
+      <p style="margin-top:0.5rem; font-size:0.8rem; opacity:0.5">Redefining Gold Savings for the Digital Age</p>
+      <div class="footer-social">
+        <a href="" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="" target="_blank" rel="noopener" aria-label="X (Twitter)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-links">
+      <h4>Navigate</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="faq.html">FAQ</a>
+      <a href="terms.html">Terms &amp; Conditions</a>
+    </div>
+    <div class="footer-links">
+      <h4>Services</h4>
+      <a href="services.html">Digital Gold</a>
+      <a href="services.html">Jewellery Redemption</a>
+      <a href="services.html">White Label</a>
+      <a href="services.html">API Integrations</a>
+    </div>
+    <div class="footer-contact">
+      <h4>Get In Touch</h4>
+      <p style="margin-top:1rem; font-size:0.85rem; opacity:0.6; line-height:1.7;">
+        KC Arcade, Near TV centre, CSEZ<br>
+        Ernakulam, Kerala, 682037<br>
+        India
+      </p>
+      <p style="margin-top:0.75rem; font-size:0.85rem; opacity:0.6; line-height:2;">
+        <a href="tel:+918086801662" style="color:inherit; text-decoration:none; display:flex; align-items:center; gap:0.4rem;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l1.9-1.9a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +91 80868 01662
+        </a>
+        <a href="tel:+919323270902" style="color:inherit; text-decoration:none; display:flex; align-items:center; gap:0.4rem; padding-left:1.4rem;">
+          +91 93232 70902
+        </a>
+      </p>
+      <p style="margin-top:0.5rem; font-size:0.85rem;">
+        <a href="mailto:hello@quickbee.in" style="display:flex; align-items:center; gap:0.4rem;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          hello@quickbee.in
+        </a>
+      </p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    ©2026 Quickbee Technology Ventures Pvt Ltd. All rights reserved.
+  </div>
+</footer>
+
+<script src="main.js"></script>
+
+<!-- FAQ Accordion -->
+<script>
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    // Close all
+    document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+    // Open clicked if it was closed
+    if (!isOpen) item.classList.add('open');
+  });
+});
+</script>
+
+<!-- TOC active on scroll -->
+<script>
+(function(){
+  const links = document.querySelectorAll('.faq-toc a');
+  const sections = document.querySelectorAll('.faq-category[id]');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 130) current = s.id;
+    });
+    links.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  }, { passive: true });
+})();
+</script>
+
+</body>
+</html>
